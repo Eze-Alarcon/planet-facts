@@ -51,7 +51,6 @@ body {
     background-color: var(--black);
     background-image: url('./resources/background-stars.svg');
     background-size: contain;
-    overflow: hidden;
 }
 
 h1, 
@@ -211,6 +210,11 @@ button:active {
     border-bottom: 1px solid var(--border-color);
 }
 
+.vanish {
+    display: none;
+}
+
+
 .header--bottom h3 {
     --item-border: var(--black);
     cursor: pointer;
@@ -232,12 +236,91 @@ button:active {
 .header--aside {
     --header--top--height: 8rem;
     position: absolute;
+    min-width: 100vw;
     top: var(--header--top--height);
     min-height: calc(100vh - var(--header--top--height));
-    min-width: 100vw;
-    overflow: hidden;
-    /* background-color: var(--black); */
-    background-color: red;
-    transform: translateX(50%); /* aqui va -100% */
-    transition: all 4s;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 8rem);
+    padding: 1rem 2.4rem 2.4rem;
+    transform: translateX(-100%);
+}
+
+
+.header--aside.open {
+    transform: translateX(0%);
+}
+
+.aside--container:first-of-type {
+    border-top: none;
+}
+
+
+.aside--container {
+    --border-color: hsla(0, 0%, 100%, .2);
+    display: grid;
+    grid-template-columns: 2fr 9fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    background-color:  transparent;
+    border-top: 1px solid var(--border-color);
+}
+
+.aside--container .aside--planet {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+[data-planet="MERCURY"] {
+    background-color: var(--mercury); 
+}
+
+[data-planet="VENUS"] {
+    background-color: var(--venus); 
+}
+
+[data-planet="EARTH"] {
+    background-color: var(--earth); 
+}
+
+[data-planet="MARS"] {
+    background-color: var(--mars); 
+}
+
+[data-planet="JUPITER"] {
+    background-color: var(--jupiter); 
+}
+
+[data-planet="SATURN"] {
+    background-color: var(--saturn); 
+}
+
+[data-planet="URANUS"] {
+    background-color: var(--uranus); 
+}
+
+[data-planet="NEPTUNE"] {
+    background-color: var(--neptune); 
+}
+
+
+
+
+
+.aside--name {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.3px;
+}
+
+.aside--container .arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('./resources/icon-chevron.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
