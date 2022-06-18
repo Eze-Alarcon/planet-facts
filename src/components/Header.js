@@ -1,11 +1,20 @@
+import planets from '../data.json'
+import Aside from "./Aside"
+
+
 const Header = () => {
+    
+    const planet = planets.map((planet) => {
+        return planet.name.toUpperCase()
+    })
 
-
+    // console.log(planet)
+    
     return (
-    <header class="header">
+    <header className="header">
 
-        <div class="header--top">
-            <h1 class="title--mini">
+        <div className="header--top">
+            <h1 className="title--mini">
                 THE PLANETS
             </h1>
 
@@ -15,17 +24,25 @@ const Header = () => {
         </div>
         
         
-        <div class="header--bottom">
-            <h3 class="subtitle--big">
+        <div className="header--bottom">
+            <h3 className="subtitle--big">
                 OVERVIEW
             </h3>
-            <h3 class="subtitle--big">
+            <h3 className="subtitle--big">
                 STRUCTURE
             </h3>
-            <h3 class="subtitle--big">
+            <h3 className="subtitle--big">
                 SURFACE
             </h3>
         </div>
+
+        <aside className="header--aside">
+            {
+                planet.map((item) => {
+                    return <Aside key={item} name={item}/>
+                })
+            }
+        </aside>
 
     </header>
     ) 

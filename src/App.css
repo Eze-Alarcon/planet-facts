@@ -37,10 +37,21 @@
     --break-desktop: 1440px;
 }
 
+
+/* 
+    ============================
+
+    ----- General settings -----
+
+    ============================
+*/ 
+
+
 body {
     background-color: var(--black);
     background-image: url('./resources/background-stars.svg');
     background-size: contain;
+    overflow: hidden;
 }
 
 h1, 
@@ -160,6 +171,7 @@ button:active {
 
 .header {
     --border-color: hsla(0, 0%, 100%, .2);
+    position: relative;
     min-width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
@@ -172,6 +184,7 @@ button:active {
 
 .header--top {
     padding: 1.6rem 2.4rem;
+    min-height: 8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -211,4 +224,20 @@ button:active {
 
 .header--bottom h3:hover {
     --item-border: var(--mercury);
+}
+
+
+/* header aside */
+
+.header--aside {
+    --header--top--height: 8rem;
+    position: absolute;
+    top: var(--header--top--height);
+    min-height: calc(100vh - var(--header--top--height));
+    min-width: 100vw;
+    overflow: hidden;
+    /* background-color: var(--black); */
+    background-color: red;
+    transform: translateX(50%); /* aqui va -100% */
+    transition: all 4s;
 }
