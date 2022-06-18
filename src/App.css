@@ -7,14 +7,62 @@
 */ 
 
 
+:root {
+    /* colors */
+
+    --black: hsla(240, 67%, 8%, 1);
+    --white: #FFFFFF;
+    --dark-gray: hsla(240, 17%, 26%, 1);
+    --light-gray: hsla(240, 6%, 54%, 1);
+
+    --mercury: hsla(194, 48%, 49%, 1);
+    --venus: hsla(33, 82%, 61%, 1);
+    --earth: hsla(263, 67%, 51%, 1);
+    --mars: hsla(10, 63%, 51%, 1);
+    --jupiter: hsla(2, 68%, 53%, 1);
+    --saturn: hsla(17, 73%, 46%, 1);
+    --uranus: hsla(169, 73%, 44%, 1);
+    --neptune: hsla(222, 87%, 56%, 1);
 
 
+    /* typography */
+
+    --font-titles: 'Antonio', sans-serif;
+    --font-texts: 'League Spartan', sans-serif; 
 
 
+    /* media queries */
+
+    --break-tablet: 768px;
+    --break-desktop: 1440px;
+}
+
+body {
+    background-color: var(--black)
+}
+
+h1, 
+h2 {
+    font-family: var(--font-titles);
+    font-weight: 400;
+    color: var(--white);
+}
 
 
+h3,
+h4 {
+    font-family: var(--font-texts);
+    font-weight: 700;
+    color: var(--white);
+}
 
 
+p, 
+span {
+    font-family: var(--font-texts);
+    font-weight: 400;
+    color: var(--white);
+}
 
 
 
@@ -26,3 +74,139 @@
 
     ===========================
 */ 
+
+
+/* texts and titles */
+
+.title--big {
+    font-size: 8rem;
+    line-height: 10.3rem;
+}
+
+
+.title--normal {
+    font-size: 4rem;
+    line-height: 5.2rem;
+    letter-spacing: -1.5px;
+}
+
+
+.title--mini {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    letter-spacing: -1px;
+}
+
+
+.subtitle--big {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: 2.6px;
+}
+
+
+.subtitle--normal {
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+}
+
+
+.text {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+}
+
+
+/* buttons */
+
+button {
+    background-color: inherit;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+
+
+    /* solo por ahora */
+
+    margin: 50% 30%;
+    height: 50px;
+    width: 300px;
+}
+
+button:hover,
+button:focus {
+    background-color: hsla(0, 0%, 85%, 1);
+}
+
+
+button:active {
+    background-color: var(--mercury);
+}
+
+
+
+
+/* 
+    ==================
+
+    ----- Header -----
+
+    ==================
+*/ 
+
+
+.header {
+    --border-color: hsla(0, 0%, 100%, .2);
+    min-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+
+/* quizas esto deba ir dentro de un querie max-width --tablet */
+
+
+.header--top {
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header--top .title--mini {
+    cursor: pointer;
+}
+
+.header--top i {
+    height: 1.7rem;
+    cursor: pointer;
+    width: 2.4rem;
+    background-image: url('./assets/icon-hamburger.svg');
+}
+
+
+.header--bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    place-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header--bottom h3 {
+    --item-border: var(--black);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    height: calc(100% - 4px);
+    margin-top: 4px;
+    align-self: center;
+    border-bottom: 4px solid var(--item-border);
+}
+
+.header--bottom h3:hover {
+    --item-border: var(--mercury);
+}
