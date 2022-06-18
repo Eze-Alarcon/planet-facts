@@ -23,4 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # images and svg
-/assets
+/resources
+*.svg
+*.png
+*.jpg
+*.jpeg

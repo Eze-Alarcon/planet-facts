@@ -184,7 +184,7 @@ button:active {
     height: 1.7rem;
     cursor: pointer;
     width: 2.4rem;
-    background-image: url('./assets/icon-hamburger.svg');
+    background-image: url('./resources/icon-hamburger.svg');
 }
 
 
