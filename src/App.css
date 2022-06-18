@@ -274,6 +274,9 @@ button:active {
     border-radius: 50%;
 }
 
+
+/* optimizar */
+
 [data-planet="MERCURY"] {
     background-color: var(--mercury); 
 }
@@ -305,9 +308,6 @@ button:active {
 [data-planet="NEPTUNE"] {
     background-color: var(--neptune); 
 }
-
-
-
 
 
 .aside--name {
