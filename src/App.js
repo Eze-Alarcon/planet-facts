@@ -2,6 +2,7 @@ import './App.css';
 
 /* components */
 
+import Status from './components/Status';
 import Header from './components/Header';
 import PlanetInfo from './components/PlanetInfo';
 
@@ -10,8 +11,10 @@ import PlanetInfo from './components/PlanetInfo';
 function App() {
 	return (
     	<>
-			<Header/>
-			<PlanetInfo/>
+			<Status>
+				<Header/>
+				<PlanetInfo/>
+			</Status>
 		</> 
 	);
 }

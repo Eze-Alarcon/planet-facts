@@ -21,7 +21,7 @@ const PlanetInfo = () => {
                 </p>
 
                 <p className="text">
-                    Source :  <a class="text--link" href=".#">wikipedia <i class="link--icon"></i></a> 
+                    Source :  <a className="text--link" href=".#">wikipedia <i className="link--icon"></i></a> 
                 </p>
             </div>
         </section>

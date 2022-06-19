@@ -189,10 +189,6 @@ button:active {
     border-bottom: 1px solid var(--border-color);
 }
 
-.vanish {
-    display: none;
-}
-
 
 .header--bottom h3 {
     --item-border: var(--black);
@@ -445,4 +441,23 @@ button:active {
         line-height: 5.2rem;
         letter-spacing: -1.5px;
     }
+}
+
+
+
+
+
+
+
+/* 
+    ===================
+    
+    ----- Helpers -----
+
+    ===================
+*/
+
+
+.vanish {
+    display: none;
 }

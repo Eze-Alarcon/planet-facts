@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import planets from '../data.json'
+import { useContext } from 'react'
 import Aside from "./Aside"
+import { Information } from './Status'
 
 
 const Header = () => {
-    const [modal, setModal] = useState(false)
+    const { data, modal, handleModal } = useContext(Information)
 
-    const handleModal = () => {
-        setModal(prevState => !prevState)
-    }
-
-    const planet = planets.map((planet) => {
+    const planet = data.map((planet) => {
         return planet.name.toUpperCase()
     })
 
