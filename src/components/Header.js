@@ -20,7 +20,7 @@ const Header = () => {
     <header className="header">
 
         <div className="header--top">
-            <h1 className="title--mini">
+            <h1 className="header--title">
                 THE PLANETS
             </h1>
 
@@ -30,7 +30,7 @@ const Header = () => {
         </div>
         
         
-        <div className={modal ? "header--bottom" : "header--bottom vanish"}>
+        <div className={ !modal ? "header--bottom" : "header--bottom vanish"}>
             <h3 className="subtitle--big">
                 OVERVIEW
             </h3>
@@ -42,7 +42,7 @@ const Header = () => {
             </h3>
         </div>
 
-        <aside className={ modal ? "header--aside" : "header--aside open"}>
+        <aside className={ !modal ? "header--aside" : "header--aside open"}>
             {
                 planet.map((item) => {
                     return <Aside key={item} name={item}/>
