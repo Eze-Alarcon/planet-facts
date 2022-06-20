@@ -1,20 +1,18 @@
-import { useState } from 'react'
 import { useContext } from 'react'
 import { Information } from './Status'
 
 const PlanetInfo = () => {
-    const { planetData, modal } = useContext(Information)
-    const [ image, setImage ] = useState(planetData.images.planet)
-    console.log(planetData.images.planet)
+    const { showInfo, planetData, modal, image } = useContext(Information)
+    
 
-    // setImage(() => )
+    // setImage(() => ) 
 
     return (
     <main className={ !modal ? "main" : "vanish"}>
         <section className="main--description">
 
             <div className="planet--image">
-                <div className="image--contianer">
+                <div>
                     <img src={image} alt="Planet"/>
                 </div>
             </div>
@@ -23,15 +21,15 @@ const PlanetInfo = () => {
             <div className="info--container">
 
                 <h1 className="main--title">
-                    MERCURY
+                    {planetData.name.toUpperCase()}
                 </h1>
 
                 <p className="text">
-                    Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.
+                    {showInfo.content}
                 </p>
 
                 <p className="text">
-                    Source :  <a className="text--link" href=".#">wikipedia <i className="link--icon"></i></a> 
+                    Source :  <a className="text--link" href={showInfo.source}>wikipedia <i className="link--icon"></i></a> 
                 </p>
             </div>
         </section>
@@ -45,7 +43,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    58.6 DAYS
+                    {planetData.rotation}
                 </p>
 
             </div>
@@ -56,7 +54,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    87.97 DAYS
+                    {planetData.revolution}
                 </p>
 
             </div>
@@ -67,7 +65,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    2.439.7 KM
+                    {planetData.radius}
                 </p>
 
             </div>
@@ -78,7 +76,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    430°C
+                    {planetData.temperature}
                 </p>
 
             </div>

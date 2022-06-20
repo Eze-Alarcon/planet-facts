@@ -4,7 +4,7 @@ import { Information } from './Status'
 
 
 const Header = () => {
-    const { allData, modal, handleModal } = useContext(Information)
+    const { allData, modal, handleModal, changeContent } = useContext(Information)
 
 
 
@@ -28,14 +28,14 @@ const Header = () => {
         </div>
         
         
-        <div className={ !modal ? "header--bottom" : "header--bottom vanish"}>
-            <h3 className="subtitle--big">
+        <div className={ !modal ? "header--bottom" : "header--bottom vanish"} onClick={(e) => changeContent(e)}>
+            <h3 className="subtitle--big" data-value="overview">
                 OVERVIEW
             </h3>
-            <h3 className="subtitle--big">
+            <h3 className="subtitle--big" data-value="structure">
                 STRUCTURE
             </h3>
-            <h3 className="subtitle--big">
+            <h3 className="subtitle--big" data-value="geology">
                 SURFACE
             </h3>
         </div>

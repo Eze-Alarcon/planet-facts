@@ -8,6 +8,8 @@ const Status = ({ children }) => {
     const [modal, setModal] = useState(false)
     const allData = planetsInfo
     const planetData = planetsInfo[0]
+	const [ showInfo, setShowInfo ] = useState(planetData.overview)
+	const [ image, setImage ] = useState(planetData.images.planet)
 
     
 
@@ -15,7 +17,26 @@ const Status = ({ children }) => {
         setModal(prevState => !prevState)
     }
 
+	const correctImage = (content) => {
+		if (content === "overview") {
+			setImage(() => planetData.images.planet)
+		}
 
+		if (content === "structure") {
+			setImage(() => planetData.images.internal)
+		}
+
+		if (content === "geology") {
+			setImage(() => planetData.images.geology)
+		}
+	}
+
+	const changeContent = (e) => {
+		if (e.target.dataset.value) {
+			setShowInfo(() => planetData[e.target.dataset.value])
+			correctImage(e.target.dataset.value)
+		}
+	}
 
     
 
@@ -25,6 +46,9 @@ const Status = ({ children }) => {
         allData,
         planetData,
         modal,
+		showInfo,
+		image,
+		changeContent,
         handleModal
     }}>
         { children }
