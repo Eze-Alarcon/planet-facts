@@ -1,21 +1,29 @@
 import React, { createContext, useState } from 'react'
-import planetInfo from '../data.json'
+import planetsInfo from '../data.json'
 
-export const Information = createContext(false)
+export const Information = createContext()
 
 
 const Status = ({ children }) => {
     const [modal, setModal] = useState(false)
-    const data = planetInfo
+    const allData = planetsInfo
+    const planetData = planetsInfo[0]
 
+    
 
     const handleModal = () => {
         setModal(prevState => !prevState)
     }
 
+
+
+    
+
+
   return (
     <Information.Provider value={{
-        data,
+        allData,
+        planetData,
         modal,
         handleModal
     }}>

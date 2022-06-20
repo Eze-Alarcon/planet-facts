@@ -50,7 +50,7 @@
 
 body {
     background-color: var(--black);
-    background-image: url('./resources/background-stars.svg');
+    background-image: url('../public/resources/background-stars.svg');
     background-size: contain;
 }
 
@@ -177,7 +177,11 @@ button:active {
     height: 1.7rem;
     cursor: pointer;
     width: 2.4rem;
-    background: url('./resources/icon-hamburger.svg') no-repeat center /cover;
+    background: url('../public/resources/icon-hamburger.svg') no-repeat center /cover;
+}
+
+.header--top i.open {
+    opacity: .5;
 }
 
 
@@ -251,35 +255,35 @@ button:active {
 
 /* optimizar */
 
-[data-planet="MERCURY"] {
+[data-planet="mercury"] {
     background-color: var(--mercury); 
 }
 
-[data-planet="VENUS"] {
+[data-planet="venus"] {
     background-color: var(--venus); 
 }
 
-[data-planet="EARTH"] {
+[data-planet="earth"] {
     background-color: var(--earth); 
 }
 
-[data-planet="MARS"] {
+[data-planet="mars"] {
     background-color: var(--mars); 
 }
 
-[data-planet="JUPITER"] {
+[data-planet="jupiter"] {
     background-color: var(--jupiter); 
 }
 
-[data-planet="SATURN"] {
+[data-planet="saturn"] {
     background-color: var(--saturn); 
 }
 
-[data-planet="URANUS"] {
+[data-planet="uranus"] {
     background-color: var(--uranus); 
 }
 
-[data-planet="NEPTUNE"] {
+[data-planet="neptune"] {
     background-color: var(--neptune); 
 }
 
@@ -293,7 +297,7 @@ button:active {
 .aside--container .arrow {
     width: 1.2rem;
     height: 1.2rem;
-    background: url('./resources/icon-chevron.svg') no-repeat center /cover;
+    background: url('../public/resources/icon-chevron.svg') no-repeat center /cover;
 }
 
 
@@ -322,8 +326,7 @@ button:active {
     place-items: center;
 }
 
-.planet--image i {
-    background: url('./resources/planet-mercury.svg') no-repeat center /cover;
+.planet--image img {
     height: 12rem;
     width: 12rem;
 }
@@ -372,7 +375,7 @@ button:active {
     position: absolute;
     right: -20px;
     bottom: 0;
-    background: url('./resources/icon-source.svg') no-repeat center /cover;
+    background: url('../public/resources/icon-source.svg') no-repeat center /cover;
     height: 1.5rem;
     width: 1.5rem
 }

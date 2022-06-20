@@ -4,10 +4,12 @@ import { Information } from './Status'
 
 
 const Header = () => {
-    const { data, modal, handleModal } = useContext(Information)
+    const { allData, modal, handleModal } = useContext(Information)
 
-    const planet = data.map((planet) => {
-        return planet.name.toUpperCase()
+
+
+    const planet = allData.map((planet) => {
+        return planet.name
     })
 
     // console.log(planet)
@@ -20,7 +22,7 @@ const Header = () => {
                 THE PLANETS
             </h1>
 
-            <i onClick={handleModal}>
+            <i onClick={handleModal} className={!modal ? "" : "open"}>
               {/* burger menu container */}  
             </i>
         </div>

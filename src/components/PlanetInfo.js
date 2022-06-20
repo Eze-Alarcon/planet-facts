@@ -1,12 +1,22 @@
-import React from 'react'
+import { useState } from 'react'
+import { useContext } from 'react'
+import { Information } from './Status'
 
 const PlanetInfo = () => {
-  return (
-    <main className="main">
+    const { planetData, modal } = useContext(Information)
+    const [ image, setImage ] = useState(planetData.images.planet)
+    console.log(planetData.images.planet)
+
+    // setImage(() => )
+
+    return (
+    <main className={ !modal ? "main" : "vanish"}>
         <section className="main--description">
 
             <div className="planet--image">
-                <i/>
+                <div className="image--contianer">
+                    <img src={image} alt="Planet"/>
+                </div>
             </div>
 
 
