@@ -4,7 +4,7 @@ import { Information } from './Status'
 
 
 const Header = () => {
-    const { allData, modal, handleModal, changeContent } = useContext(Information)
+    const { allData, modal, handleModal, changeContent, findPlanet } = useContext(Information)
 
 
 
@@ -43,7 +43,7 @@ const Header = () => {
         <aside className={ !modal ? "header--aside" : "header--aside open"}>
             {
                 planet.map((item) => {
-                    return <Aside key={item} name={item}/>
+                    return <Aside key={item} name={item} findPlanet={findPlanet}/>
                 })
             }
         </aside>

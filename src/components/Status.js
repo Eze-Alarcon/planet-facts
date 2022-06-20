@@ -5,17 +5,29 @@ export const Information = createContext()
 
 
 const Status = ({ children }) => {
-    const [modal, setModal] = useState(false)
-    const allData = planetsInfo
-    const planetData = planetsInfo[0]
+	const allData = planetsInfo
+    const [ planetData, setPlanetData ] = useState(planetsInfo[0])
 	const [ showInfo, setShowInfo ] = useState(planetData.overview)
 	const [ image, setImage ] = useState(planetData.images.planet)
+    const [modal, setModal] = useState(false)
 
+
+
+	const findPlanet = (id) => {
+		let [planet] = allData.filter(planet => planet.name === id) 
+		setPlanetData(() => planet)
+	} 
     
+
+	// useEffect(= () )
+
+	
+
 
     const handleModal = () => {
         setModal(prevState => !prevState)
     }
+
 
 	const correctImage = (content) => {
 		if (content === "overview") {
@@ -30,6 +42,7 @@ const Status = ({ children }) => {
 			setImage(() => planetData.images.geology)
 		}
 	}
+
 
 	const changeContent = (e) => {
 		if (e.target.dataset.value) {
@@ -49,6 +62,7 @@ const Status = ({ children }) => {
 		showInfo,
 		image,
 		changeContent,
+		findPlanet,
         handleModal
     }}>
         { children }

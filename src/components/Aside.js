@@ -1,13 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
+import { Information } from './Status'
 
 const Aside = ({name}) => {
-    const changePLanet = (name) => {
-        console.log(name)
-    }
+    const { findPlanet } = useContext(Information)
 
 
     return (
-    <div className="aside--container" key={name} onClick={() => changePLanet(name)}>
+    <div className="aside--container" key={name} onClick={() => findPlanet(name)}>
         <i className="aside--planet" data-planet={name.toLowerCase()}>
             {/* planet icon */}
         </i>
