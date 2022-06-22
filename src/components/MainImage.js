@@ -9,10 +9,10 @@ const MainImage = ({props}) => {
 		backgroundImage: `url(./resources/geology-${planetData.name.toLowerCase()}.png)`,
 		backgroundSize: "contain",
 		backgroundRepeat: "no-repeat",
-		height: "10rem",
-		width: "10rem",
+		height: "12rem",
+		width: "12rem",
 		top: "60%",
-		left: "calc(50% - 4rem)",
+		left: "calc(50% - 5rem)",
 	}
 
 	

@@ -343,7 +343,7 @@ button:active {
     justify-content: space-between;
     align-items: center;
     height: 28rem;
-    margin: 0 3.4rem 3.4rem;
+    margin: 3.4rem 3.4rem;
 }
 
 .main--title {

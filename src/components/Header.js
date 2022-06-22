@@ -29,13 +29,13 @@ const Header = () => {
         
         
         <div className={ !modal ? "header--bottom" : "header--bottom vanish"} onClick={(e) => changeContent(e)}>
-            <h3 className="subtitle--big" data-value="overview">
+            <h3 className="subtitle--big" data-value="overview" data-active={true}>
                 OVERVIEW
             </h3>
-            <h3 className="subtitle--big" data-value="structure">
+            <h3 className="subtitle--big" data-value="structure" data-active={false}>
                 STRUCTURE
             </h3>
-            <h3 className="subtitle--big" data-value="geology">
+            <h3 className="subtitle--big" data-value="geology" data-active={false}>
                 SURFACE
             </h3>
         </div>
