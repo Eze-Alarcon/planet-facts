@@ -244,6 +244,7 @@ button:active {
     height: 100%;
     background-color:  transparent;
     border-top: 1px solid var(--border-color);
+    cursor: pointer;
 }
 
 .aside--container .aside--planet {
@@ -325,12 +326,6 @@ button:active {
     display: grid;
     place-items: center;
 }
-
-.planet--image img {
-    height: 12rem;
-    width: 12rem;
-}
-
 
 
 .main--description {

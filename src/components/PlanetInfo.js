@@ -5,14 +5,49 @@ const PlanetInfo = () => {
     const { showInfo, planetData, modal, image } = useContext(Information)
     
 
-    // setImage(() => ) 
+    const sizes = {
+        "Mercury": {
+            width: "11.1rem",
+            height: "11.1rem"
+        },
+        "Venus": {
+            width: "15.4rem",
+            height: "15.4rem"
+        }, 
+        "Earth": {
+            width: "17.3rem",
+            height: "17.3rem"
+        },
+        "Mars": {
+            width: "12.9rem",
+            height: "12.9rem"
+        },
+        "Jupiter": {
+            width: "22.4rem",
+            height: "22.4rem"
+        },
+        "Saturn": {
+            width: "25rem",
+            height: "25rem"
+        },
+        "Uranus": {
+            width: "17.6rem",
+            height: "17.6rem"
+        },
+        "Neptune": {
+            width: "17.3rem",
+            height: "17.3rem"
+        }
+    }
+
+    const correctSize = (id) => sizes[id]
 
     return (
     <main className={ !modal ? "main" : "vanish"}>
         <section className="main--description">
 
             <div className="planet--image">
-                <div>
+                <div style={correctSize(planetData.name)}>
                     <img src={image} alt="Planet"/>
                 </div>
             </div>

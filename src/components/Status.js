@@ -16,31 +16,22 @@ const Status = ({ children }) => {
 	const findPlanet = (id) => {
 		let [planet] = allData.filter(planet => planet.name === id) 
 		setPlanetData(() => planet)
+		setShowInfo(() => planet.overview)
+		correctImage("overview", planet)
+		setModal((prevState) => !prevState)
 	} 
-    
-
-	// useEffect(= () )
-
 	
 
 
-    const handleModal = () => {
-        setModal(prevState => !prevState)
-    }
+    const handleModal = () => setModal(prevState => !prevState)
 
 
-	const correctImage = (content) => {
-		if (content === "overview") {
-			setImage(() => planetData.images.planet)
-		}
+	const correctImage = (content, planet = planetData) => {
+		if (content === "overview") setImage(() => planet.images.planet)
 
-		if (content === "structure") {
-			setImage(() => planetData.images.internal)
-		}
+		if (content === "structure") setImage(() => planet.images.internal)
 
-		if (content === "geology") {
-			setImage(() => planetData.images.geology)
-		}
+		if (content === "geology") setImage(() => planet.images.geology)
 	}
 
 
