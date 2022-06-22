@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { Information } from './Status'
+import MainImage from './MainImage'
 
 const PlanetInfo = () => {
     const { showInfo, planetData, modal, image } = useContext(Information)
@@ -47,11 +48,8 @@ const PlanetInfo = () => {
         <section className="main--description">
 
             <div className="planet--image">
-                <div style={correctSize(planetData.name)}>
-                    <img src={image} alt="Planet"/>
-                </div>
+                <MainImage props={{image, correctSize, planetData}}/>
             </div>
-
 
             <div className="info--container">
 

@@ -325,6 +325,7 @@ button:active {
     height: 32rem;
     display: grid;
     place-items: center;
+    position: relative;
 }
 
 
