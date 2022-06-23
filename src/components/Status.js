@@ -7,11 +7,12 @@ export const Information = createContext()
 const Status = ({ children }) => {
 	const allData = planetsInfo
     const [ planetData, setPlanetData ] = useState(planetsInfo[0])
+	const [ infoAbout, setInfoAbout ] = useState("overview")
 	const [ showInfo, setShowInfo ] = useState(planetData.overview)
 	const [ image, setImage ] = useState(planetData.images.planet)
     const [modal, setModal] = useState(false)
 
-	/* Corresponden al estado de la clase active en el header */
+	/* Corresponden al estado del header */
 	const [ activeClass, setActiveClass ] = useState([planetData.name.toLowerCase(), false, false])
 
 
@@ -19,51 +20,42 @@ const Status = ({ children }) => {
 	const findPlanet = (id) => {
 		let [planet] = allData.filter(planet => planet.name === id) 
 		setPlanetData(() => planet)
-		setShowInfo(() => planet.overview)
-		correctImage("overview", planet)
+		setInfoAbout(() => "overview")
 		setModal((prevState) => !prevState)
 	} 
 
-	
-
-	// useEffect(() => {
-	// 	let id = planetData.name.toLowerCase()
-	// 	if (modal === false) setActiveClass(() => [id, false, false])
-	// }, [planetData, showInfo, modal])
-
-    const handleModal = () => setModal(prevState => !prevState)
-
-
-	const correctImage = (content, planet = planetData) => {
+	useEffect(() => {
 
 		let id = planetData.name.toLowerCase()
 
-		if (content === "overview") {
-			setImage(() => planet.images.planet)
+		if (infoAbout === "overview") {
+			setShowInfo(() => planetData.overview)
+			setImage(() => planetData.images.planet)
 			setActiveClass(() => [id, false, false])
 		}
 
-		if (content === "structure") {
-			setImage(() => planet.images.internal)
+		if (infoAbout === "structure") {
+			setShowInfo(() => planetData.structure)
+			setImage(() => planetData.images.internal)
 			setActiveClass(() => [false, id, false])
 		}
 
-		if (content === "geology") {
-			setImage(() => planet.images.geology)
+		if (infoAbout === "geology") {
+			setShowInfo(() => planetData.geology)
+			setImage(() => planetData.images.geology)
 			setActiveClass(() => [false, false, id])
 		}
-	}
 
+	}, [infoAbout, planetData])
+
+
+    const handleModal = () => setModal(prevState => !prevState)
 
 	const changeContent = (e) => {
 		if (e.target.dataset.value) {
-			setShowInfo(() => planetData[e.target.dataset.value])
-			correctImage(e.target.dataset.value)
+			setInfoAbout(() => e.target.dataset.value)
 		}
 	}
-
-    
-
 
   return (
     <Information.Provider value={{
