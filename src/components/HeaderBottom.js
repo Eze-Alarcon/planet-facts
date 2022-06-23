@@ -1,23 +1,24 @@
-const HeaderBottom = ({activeClass}) => {
+const HeaderBottom = ({color}) => {
+
 
   return (
     <>
         <h3 
-            className={"subtitle--big"} 
+            className="subtitle--big" 
             data-value="overview"
-            data-color={activeClass[0]}>
+            data-color={color.toLowerCase()}>
             OVERVIEW
         </h3>
         <h3 
-            className={"subtitle--big"}  
+            className="subtitle--big"  
             data-value="structure"
-            data-color={activeClass[1]}>
+            data-color={false}>
             STRUCTURE
         </h3>
         <h3 
-            className={"subtitle--big"}  
+            className="subtitle--big"  
             data-value="geology"
-            data-color={activeClass[2]}>
+            data-color={false}>
             SURFACE
         </h3>
     </>

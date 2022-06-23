@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import planetsInfo from '../data.json'
+import { findTags } from './helpers'
 
 export const Information = createContext()
 
@@ -12,10 +13,6 @@ const Status = ({ children }) => {
 	const [ image, setImage ] = useState(planetData.images.planet)
     const [modal, setModal] = useState(false)
 
-	/* Corresponden al estado del header */
-	const [ activeClass, setActiveClass ] = useState([planetData.name.toLowerCase(), false, false])
-
-
 
 	const findPlanet = (id) => {
 		let [planet] = allData.filter(planet => planet.name === id) 
@@ -26,24 +23,20 @@ const Status = ({ children }) => {
 
 	useEffect(() => {
 
-		let id = planetData.name.toLowerCase()
-
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
 			setImage(() => planetData.images.planet)
-			setActiveClass(() => [id, false, false])
+			findTags(undefined, planetData.name)
 		}
 
 		if (infoAbout === "structure") {
 			setShowInfo(() => planetData.structure)
 			setImage(() => planetData.images.internal)
-			setActiveClass(() => [false, id, false])
 		}
 
 		if (infoAbout === "geology") {
 			setShowInfo(() => planetData.geology)
 			setImage(() => planetData.images.geology)
-			setActiveClass(() => [false, false, id])
 		}
 
 	}, [infoAbout, planetData])
@@ -51,9 +44,10 @@ const Status = ({ children }) => {
 
     const handleModal = () => setModal(prevState => !prevState)
 
-	const changeContent = (e) => {
+	const changeContent = (e, planet) => {
 		if (e.target.dataset.value) {
 			setInfoAbout(() => e.target.dataset.value)
+			findTags(e.target, planet)
 		}
 	}
 
@@ -64,7 +58,6 @@ const Status = ({ children }) => {
         modal,
 		showInfo,
 		image,
-		activeClass,
 		changeContent,
 		findPlanet,
         handleModal

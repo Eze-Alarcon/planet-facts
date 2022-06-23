@@ -7,13 +7,13 @@ import { Information } from './Status'
 const Header = () => {
     const { 
         allData, 
+        planetData,
         modal, 
-        activeClass,
+        // activeClass,
         handleModal, 
         changeContent,
         findPlanet 
     } = useContext(Information)
-
 
     const planet = allData.map((planet) => planet.name)
 
@@ -32,9 +32,15 @@ const Header = () => {
         
         <nav 
         className={ !modal ? "header--bottom" : "vanish"} 
+        onClick={(e) => changeContent(e, planetData.name)}>
+            <HeaderBottom color={planetData.name}/>
+        </nav>
+
+        {/* <nav 
+        className={ !modal ? "header--bottom" : "vanish"} 
         onClick={(e) => changeContent(e)}>
             <HeaderBottom activeClass={activeClass}/>
-        </nav>
+        </nav> */}
 
        
 
