@@ -340,6 +340,7 @@ button:active {
 
 .main {
     max-width: 100vh;
+    margin: 0 auto
 }
 
 
@@ -487,4 +488,67 @@ button:active {
 
 .vanish {
     display: none;
+}
+
+
+
+
+/* 
+    =========================
+    
+    ----- Planets Sizes -----
+
+    =========================
+*/
+
+.geology--img {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 12rem;
+    width: 12rem;
+    top: 60%;
+    left: calc(50% - 5rem);
+}
+
+
+
+img[data-url="mercury"] {
+    width: 11.1rem;
+    height: 11.1rem
+}
+
+img[data-url="venus"] {
+    width: 15.4rem;
+    height: 15.4rem
+}
+
+img[data-url="earth"] {
+    width: 17.3rem;
+    height: 17.3rem
+}
+
+img[data-url="mars"] {
+    width: 12.9rem;
+    height: 12.9rem
+}
+
+img[data-url="jupiter"] {
+    width: 22.4rem;
+    height: 22.4rem
+}
+
+img[data-url="saturn"] {
+    width: 25rem;
+    height: 25rem
+}
+
+img[data-url="uranus"] {
+    width: 17.6rem;
+    height: 17.6rem
+}
+
+img[data-url="neptune"] {
+    width: 17.3rem;
+    height: 17.3rem
 }

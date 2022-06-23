@@ -2,17 +2,11 @@ import React from 'react'
 
 const MainImage = ({props}) => {
 	
-	let { image, correctSize, planetData } = props
+	let { image, planetData } = props
+	let shortcut = planetData.name.toLowerCase()
 
 	let backImage = {
-		position: "absolute",
-		backgroundImage: `url(./resources/geology-${planetData.name.toLowerCase()}.png)`,
-		backgroundSize: "contain",
-		backgroundRepeat: "no-repeat",
-		height: "12rem",
-		width: "12rem",
-		top: "60%",
-		left: "calc(50% - 5rem)",
+		backgroundImage: `url(./resources/geology-${shortcut}.png)`,
 	}
 
 	
@@ -20,14 +14,14 @@ const MainImage = ({props}) => {
 	if (!image.includes("geology")) {
 		return (
 			<div>
-				<img src={image} alt="Planet" style={correctSize(planetData.name)}/>
+				<img src={image} alt="Planet" data-url={shortcut}/>
 			</div>
 		)
 	} else if (image.includes("geology")) {
 			return (
 				<div>
-					<img src={`./resources/planet-${planetData.name.toLowerCase()}.svg`} alt="Planet" style={correctSize(planetData.name)}/>
-					<span style={backImage}></span>
+					<img src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
+					<span class="geology--img" style={backImage}></span>
 				</div>
 			)
 	}
