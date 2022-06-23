@@ -18,12 +18,12 @@ const MainImage = ({props}) => {
 			</div>
 		)
 	} else if (image.includes("geology")) {
-			return (
-				<div>
-					<img src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
-					<span class="geology--img" style={backImage}></span>
-				</div>
-			)
+		return (
+			<div>
+				<img src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
+				<span className="geology--img" style={backImage}></span>
+			</div>
+		)
 	}
 }
 

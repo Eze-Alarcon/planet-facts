@@ -1,13 +1,15 @@
 import { useContext } from 'react'
 import { Information } from './Status'
 import MainImage from './MainImage'
+import Navigation from './Navigation'
 
 const PlanetInfo = () => {
     const { 
         showInfo, 
         planetData, 
         modal, 
-        image 
+        image,
+        changeContent
     } = useContext(Information)
     
 
@@ -33,7 +35,13 @@ const PlanetInfo = () => {
                     Source :  <a className="text--link" href={showInfo.source}>wikipedia <i className="link--icon"></i></a> 
                 </p>
             </div>
+
+            <nav className="navigation" onClick={(e) => changeContent(e)}>
+                <Navigation/>
+            </nav>
         </section>
+
+        
 
 
         <section className="main--data">

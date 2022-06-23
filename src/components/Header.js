@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Aside from "./Aside"
-import Navigation from './Navigation'
+import HeaderBottom from './HeaderBottom'
 import { Information } from './Status'
 
 
@@ -8,7 +8,9 @@ const Header = () => {
     const { 
         allData, 
         modal, 
+        activeClass,
         handleModal, 
+        changeContent,
         findPlanet 
     } = useContext(Information)
 
@@ -28,7 +30,12 @@ const Header = () => {
             </i>
         </div>
         
-        <Navigation/>
+        <nav 
+        className={ !modal ? "header--bottom" : "vanish"} 
+        onClick={(e) => changeContent(e)}>
+            <HeaderBottom activeClass={activeClass}/>
+        </nav>
+
        
 
         <aside className={ !modal ? "header--aside" : "header--aside open"}>

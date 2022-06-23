@@ -75,46 +75,8 @@ span {
     font-family: var(--font-texts);
     font-weight: 400;
     color: var(--white);
+    max-width: 60ch;
 }
-
-
-
-
-/* 
-    ===========================
-
-    ----- Utility Classes -----
-
-    ===========================
-*/ 
-
-
-/* buttons */
-
-button {
-    background-color: inherit;
-    color: white;
-    border: 1px solid rgba(0, 0, 0, .1);
-
-
-
-    /* solo por ahora */
-
-    margin: 50% 30%;
-    height: 50px;
-    width: 300px;
-}
-
-button:hover,
-button:focus {
-    background-color: hsla(0, 0%, 85%, 1);
-}
-
-
-button:active {
-    background-color: var(--mercury);
-}
-
 
 
 
@@ -136,14 +98,11 @@ button:active {
 }
 
 
-/* quizas esto deba ir dentro de un querie max-width --tablet */
-
-
 .header--top {
     padding: 1.6rem 2.4rem;
     min-height: 8rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
 }
@@ -156,7 +115,6 @@ button:active {
     cursor: pointer;
 }
 
-
 .header--top i {
     height: 1.7rem;
     cursor: pointer;
@@ -168,23 +126,32 @@ button:active {
     opacity: .5;
 }
 
-
-/* 
-    ======================
-
-    ----- Navigation -----
-
-    ======================
-*/ 
-
-
-.nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    place-items: center;
-    border-bottom: 1px solid var(--border-color);
+.header--bottom {
+    display: none;
 }
+
+@media (max-width: 768px) {
+
+    .header--top {
+        justify-content: space-between;
+    }
+
+    .header--bottom {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        place-items: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+
+@media (min-width: 768px) {
+    .header--top i {
+        display: none;
+    }
+}
+
 
 .subtitle--big {
     font-size: 1.2rem;
@@ -198,46 +165,46 @@ button:active {
     align-self: center;
 }
 
-.nav h3 {
+.header--bottom h3 {
     --item-border: var(--black);
     border-bottom: 4px solid var(--item-border);
 }
 
-.nav h3:hover,
-.nav h3.active {
+.header--bottom h3:hover,
+.header--bottom h3.active {
     --item-border: var(--light-gray);
 }
 
 
-.nav h3[data-color="mercury"] {
+.header--bottom h3[data-color="mercury"] {
     --item-border: var(--mercury); 
 }
 
-.nav h3[data-color="venus"] {
+.header--bottom h3[data-color="venus"] {
     --item-border: var(--venus); 
 }
 
-.nav h3[data-color="earth"] {
+.header--bottom h3[data-color="earth"] {
     --item-border: var(--earth); 
 }
 
-.nav h3[data-color="mars"] {
+.header--bottom h3[data-color="mars"] {
     --item-border: var(--mars); 
 }
 
-.nav h3[data-color="jupiter"] {
+.header--bottom h3[data-color="jupiter"] {
     --item-border: var(--jupiter); 
 }
 
-.nav h3[data-color="saturn"] {
+.header--bottom h3[data-color="saturn"] {
     --item-border: var(--saturn); 
 }
 
-.nav h3[data-color="uranus"] {
+.header--bottom h3[data-color="uranus"] {
     --item-border: var(--uranus); 
 }
 
-.nav h3[data-color="neptune"] {
+.header--bottom h3[data-color="neptune"] {
     --item-border: var(--neptune); 
 }
 
@@ -352,7 +319,6 @@ button:active {
     margin: 0 auto
 }
 
-
 .planet--image {
     width: 100%;
     height: 32rem;
@@ -362,13 +328,22 @@ button:active {
 }
 
 
+
+/* 
+    ========================================
+
+    ----- Main - "Description Section" -----
+
+    ========================================
+*/
+
+
 .main--description {
     max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
 
 .info--container {
     display: flex;
@@ -398,7 +373,7 @@ button:active {
 }
 
 .text--link {
-    color: var(--white);
+    color: var(--light-gray);
     font-weight: bold;
     font-family: inherit;
     font-size: 1.5rem;
@@ -414,10 +389,150 @@ button:active {
     width: 1.5rem
 }
 
+@media (min-width: 768px) {
 
-/* ==================================================================== */
+    .main {
+        margin: 0;
+    }
+
+    .main--description {
+        display: grid;
+        grid-template-areas: 
+            "image image"
+            "description nav";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40rem 36rem;
+    }
+
+    .planet--image {
+        grid-area: image;
+        place-self: center;
+    }
+
+    .info--container {
+        grid-area: description;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 0;
+        padding-left: 3.9rem;
+    }
+
+    .text {
+        text-align: left;
+    }
+    
+    .navigation {
+        grid-area: nav;
+        align-self: center;
+        justify-self: center;
+        min-width: 28rem;
+    }
+}
+
+/* 
+    ======================
+
+    ----- Navigation -----
+
+    ======================
+*/ 
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none !important;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+button {
+    --bg-color: inherit;
+    display: flex;
+    color: var(--white);
+    background-color: var(--bg-color);
+    border: 1px solid var(--dark-gray);
+    display: flex;
+    align-items: center;
+    max-width: 28rem;
+    min-height: 4rem;
+    cursor: pointer;
+}
+
+.button--content,
+.button--content .number {
+    line-height: 2.5rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    font-family: var(--font-texts);
+    font-size: 1.2rem;
+}
+
+.button--content .number {
+    margin: 0 2rem;
+}
 
 
+
+button:hover,
+button:focus {
+    --bg-color: var(--dark-gray);
+}
+
+
+.navigation button[data-color="mercury"] {
+    --bg-color: var(--mercury); 
+}
+
+.navigation button[data-color="venus"] {
+    --bg-color: var(--venus); 
+}
+
+.navigation button[data-color="earth"] {
+    --bg-color: var(--earth); 
+}
+
+.navigation button[data-color="mars"] {
+    --bg-color: var(--mars); 
+}
+
+.navigation button[data-color="jupiter"] {
+    --bg-color: var(--jupiter); 
+}
+
+.navigation button[data-color="saturn"] {
+    --bg-color: var(--saturn); 
+}
+
+.navigation button[data-color="uranus"] {
+    --bg-color: var(--uranus); 
+}
+
+.navigation button[data-color="neptune"] {
+    --bg-color: var(--neptune); 
+}
+
+
+
+
+
+
+
+
+
+/* 
+    =================================
+
+    ----- Main - "Data Section" -----
+
+    =================================
+*/
 
 
 .main--data {

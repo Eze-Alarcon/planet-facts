@@ -3,35 +3,31 @@ import { Information } from './Status'
 
 const Navigation = () => {
     const { 
-        modal, 
         activeClass,
-        changeContent, 
     } = useContext(Information)
 
 
   return (
-    <nav 
-        className={ !modal ? "nav" : "vanish"} 
-        onClick={(e) => changeContent(e)}>
-            <h3 
-                className={"subtitle--big"} 
+    <>
+            <button type="button" 
+                className="button--content" 
                 data-value="overview"
                 data-color={activeClass[0]}>
-                OVERVIEW
-            </h3>
-            <h3 
-                className={"subtitle--big"}  
+                <span class="number">01</span> OVERVIEW
+            </button>
+            <button type="button" 
+                className="button--content"
                 data-value="structure"
                 data-color={activeClass[1]}>
-                STRUCTURE
-            </h3>
-            <h3 
-                className={"subtitle--big"}  
+                <span class="number">02</span> STRUCTURE
+            </button>
+            <button type="button" 
+                className="button--content"
                 data-value="geology"
                 data-color={activeClass[2]}>
-                SURFACE
-            </h3>
-    </nav>
+                <span class="number">03</span> SURFACE
+            </button>
+    </>
     )
 }
 
