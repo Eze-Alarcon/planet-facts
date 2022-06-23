@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import planetsInfo from '../data.json'
 
 export const Information = createContext()
@@ -11,6 +11,9 @@ const Status = ({ children }) => {
 	const [ image, setImage ] = useState(planetData.images.planet)
     const [modal, setModal] = useState(false)
 
+	/* Corresponden al estado de la clase active en el header */
+	const [ activeClass, setActiveClass ] = useState([planetData.name.toLowerCase(), false, false])
+
 
 
 	const findPlanet = (id) => {
@@ -20,18 +23,35 @@ const Status = ({ children }) => {
 		correctImage("overview", planet)
 		setModal((prevState) => !prevState)
 	} 
+
 	
 
+	// useEffect(() => {
+	// 	let id = planetData.name.toLowerCase()
+	// 	if (modal === false) setActiveClass(() => [id, false, false])
+	// }, [planetData, showInfo, modal])
 
     const handleModal = () => setModal(prevState => !prevState)
 
 
 	const correctImage = (content, planet = planetData) => {
-		if (content === "overview") setImage(() => planet.images.planet)
 
-		if (content === "structure") setImage(() => planet.images.internal)
+		let id = planetData.name.toLowerCase()
 
-		if (content === "geology") setImage(() => planet.images.geology)
+		if (content === "overview") {
+			setImage(() => planet.images.planet)
+			setActiveClass(() => [id, false, false])
+		}
+
+		if (content === "structure") {
+			setImage(() => planet.images.internal)
+			setActiveClass(() => [false, id, false])
+		}
+
+		if (content === "geology") {
+			setImage(() => planet.images.geology)
+			setActiveClass(() => [false, false, id])
+		}
 	}
 
 
@@ -52,6 +72,7 @@ const Status = ({ children }) => {
         modal,
 		showInfo,
 		image,
+		activeClass,
 		changeContent,
 		findPlanet,
         handleModal

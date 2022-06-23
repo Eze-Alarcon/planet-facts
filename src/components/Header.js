@@ -4,16 +4,18 @@ import { Information } from './Status'
 
 
 const Header = () => {
-    const { allData, modal, handleModal, changeContent, findPlanet } = useContext(Information)
+    const { 
+        allData, 
+        modal, 
+        activeClass,
+        handleModal, 
+        changeContent, 
+        findPlanet 
+    } = useContext(Information)
 
 
+    const planet = allData.map((planet) => planet.name)
 
-    const planet = allData.map((planet) => {
-        return planet.name
-    })
-
-    // console.log(planet)
-    
     return (
     <header className="header">
 
@@ -28,22 +30,36 @@ const Header = () => {
         </div>
         
         
-        <div className={ !modal ? "header--bottom" : "header--bottom vanish"} onClick={(e) => changeContent(e)}>
-            <h3 className="subtitle--big" data-value="overview" data-active={true}>
-                OVERVIEW
-            </h3>
-            <h3 className="subtitle--big" data-value="structure" data-active={false}>
-                STRUCTURE
-            </h3>
-            <h3 className="subtitle--big" data-value="geology" data-active={false}>
-                SURFACE
-            </h3>
+        <div 
+            className={ !modal ? "header--bottom" : "header--bottom vanish"} 
+            onClick={(e) => changeContent(e)}>
+                <h3 
+                    className={"subtitle--big"} 
+                    data-value="overview"
+                    data-color={activeClass[0]}>
+                    OVERVIEW
+                </h3>
+                <h3 
+                    className={"subtitle--big"}  
+                    data-value="structure"
+                    data-color={activeClass[1]}>
+                    STRUCTURE
+                </h3>
+                <h3 
+                    className={"subtitle--big"}  
+                    data-value="geology"
+                    data-color={activeClass[2]}>
+                    SURFACE
+                </h3>
         </div>
 
         <aside className={ !modal ? "header--aside" : "header--aside open"}>
             {
                 planet.map((item) => {
-                    return <Aside key={item} name={item} findPlanet={findPlanet}/>
+                    return <Aside 
+                        key={item} 
+                        name={item} 
+                        findPlanet={findPlanet}/>
                 })
             }
         </aside>

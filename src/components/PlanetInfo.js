@@ -3,7 +3,12 @@ import { Information } from './Status'
 import MainImage from './MainImage'
 
 const PlanetInfo = () => {
-    const { showInfo, planetData, modal, image } = useContext(Information)
+    const { 
+        showInfo, 
+        planetData, 
+        modal, 
+        image 
+    } = useContext(Information)
     
 
     const sizes = {

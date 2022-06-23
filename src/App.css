@@ -89,22 +89,6 @@ span {
 */ 
 
 
-/* texts and titles */
-
-
-
-
-
-.subtitle--big {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
-    letter-spacing: 2.6px;
-}
-
-
-
-
-
 /* buttons */
 
 button {
@@ -193,20 +177,59 @@ button:active {
     border-bottom: 1px solid var(--border-color);
 }
 
-
-.header--bottom h3 {
-    --item-border: var(--black);
+.subtitle--big {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: 2.6px;
     cursor: pointer;
     display: grid;
     place-items: center;
     height: calc(100% - 4px);
     margin-top: 4px;
     align-self: center;
+}
+
+.header--bottom h3 {
+    --item-border: var(--black);
     border-bottom: 4px solid var(--item-border);
 }
 
-.header--bottom h3:hover {
+/* .header--bottom h3:hover,
+.header--bottom h3.active {
     --item-border: var(--mercury);
+} */
+
+
+.header--bottom h3[data-color="mercury"] {
+    --item-border: var(--mercury); 
+}
+
+.header--bottom h3[data-color="venus"] {
+    --item-border: var(--venus); 
+}
+
+.header--bottom h3[data-color="earth"] {
+    --item-border: var(--earth); 
+}
+
+.header--bottom h3[data-color="mars"] {
+    --item-border: var(--mars); 
+}
+
+.header--bottom h3[data-color="jupiter"] {
+    --item-border: var(--jupiter); 
+}
+
+.header--bottom h3[data-color="saturn"] {
+    --item-border: var(--saturn); 
+}
+
+.header--bottom h3[data-color="uranus"] {
+    --item-border: var(--uranus); 
+}
+
+.header--bottom h3[data-color="neptune"] {
+    --item-border: var(--neptune); 
 }
 
 
