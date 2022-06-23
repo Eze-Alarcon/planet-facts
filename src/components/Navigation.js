@@ -13,19 +13,19 @@ const Navigation = () => {
                 className="button--content" 
                 data-value="overview"
                 data-color={activeClass[0]}>
-                <span class="number">01</span> OVERVIEW
+                <span className="number">01</span> OVERVIEW
             </button>
             <button type="button" 
                 className="button--content"
                 data-value="structure"
                 data-color={activeClass[1]}>
-                <span class="number">02</span> STRUCTURE
+                <span className="number">02</span> STRUCTURE
             </button>
             <button type="button" 
                 className="button--content"
                 data-value="geology"
                 data-color={activeClass[2]}>
-                <span class="number">03</span> SURFACE
+                <span className="number">03</span> SURFACE
             </button>
     </>
     )
