@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MainImage = ({props}) => {
 	
 	let { image, planetData } = props
@@ -9,18 +7,17 @@ const MainImage = ({props}) => {
 		backgroundImage: `url(./resources/geology-${shortcut}.png)`,
 	}
 
-	
 
 	if (!image.includes("geology")) {
 		return (
 			<div>
-				<img src={image} alt="Planet" data-url={shortcut}/>
+				<img className="" src={image} alt="Planet" data-url={shortcut}/>
 			</div>
 		)
 	} else if (image.includes("geology")) {
 		return (
 			<div>
-				<img src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
+				<img className="" src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
 				<span className="geology--img" style={backImage}></span>
 			</div>
 		)

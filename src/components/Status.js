@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import planetsInfo from '../data.json'
-import { findTags } from './helpers'
+import { findTags, imgAnimations } from './helpers'
 
 export const Information = createContext()
 
@@ -17,21 +17,26 @@ const Status = ({ children }) => {
 	const findPlanet = (id) => {
 
 		if (id.target?.localName === "nav") return
-
 		let viewport = window.innerWidth < 768;
 
+		imgAnimations(viewport)
+		
 		if (viewport) {
 			let [planet] = allData.filter(planet => planet.name === id) 
 			setPlanetData(() => planet)
 			setInfoAbout(() => "overview")
 			setModal((prevState) => !prevState)
-		} 
-		else {
-			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
-			setPlanetData(() => planet)
-			setInfoAbout(() => "overview")
-			findTags("overview", id.target.dataset.value)
 		}
+
+		else {
+			setTimeout(() => {
+				let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
+				setPlanetData(() => planet)
+				setInfoAbout(() => "overview")
+				findTags("overview", id.target.dataset.value)
+			}, 1000)
+		}
+
 	} 
 
 	useEffect(() => {

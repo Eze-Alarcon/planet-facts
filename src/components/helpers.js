@@ -37,5 +37,50 @@ const findTags = (search, planet) => {
 }
 
 
+/* 
+    Fade entrances
 
-export { findTags }
+    Fade exits
+
+*/
+
+const imgAnimations = (mobile) => {
+
+    const NECESARY = "animate__animated"
+
+    const animations = {
+        "leftInFade": "animate__fadeInLeft",
+        "rightOutFade": "animate__fadeOutRight",
+        "flipInX": "animate__flipInX",
+        "flipOutX": "animate__flipOutX"
+    }
+
+    let [imgTag] = document.querySelectorAll("img")
+
+
+    if (imgTag.classList !== "" && !mobile) {
+        imgTag.classList = `${NECESARY} ${animations.rightOutFade}`
+
+        setTimeout(() => {
+            imgTag.classList = `${NECESARY} ${animations.leftInFade}`
+        }, 1000)
+    } else {
+        imgTag.classList = `${NECESARY} ${animations.leftInFade}`
+
+        setTimeout(() => {
+            imgTag.classList = ``
+        }, 1000)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+export { findTags, imgAnimations }
