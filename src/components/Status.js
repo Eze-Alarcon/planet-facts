@@ -16,6 +16,8 @@ const Status = ({ children }) => {
 
 	const findPlanet = (id) => {
 
+		if (id.target.localName === "nav") return
+
 		let viewport = window.innerWidth < 768;
 
 		if (viewport) {
@@ -23,8 +25,9 @@ const Status = ({ children }) => {
 			setPlanetData(() => planet)
 			setInfoAbout(() => "overview")
 			setModal((prevState) => !prevState)
-		} else {
-			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value) 
+		} 
+		else {
+			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
 			setPlanetData(() => planet)
 			setInfoAbout(() => "overview")
 			findButtons(undefined, id.target.dataset.value)
@@ -36,7 +39,7 @@ const Status = ({ children }) => {
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
 			setImage(() => planetData.images.planet)
-			findTags(undefined, planetData.name)
+			findTags(undefined, planetData.name)  // Aca esta el tema
 		}
 
 		if (infoAbout === "structure") {

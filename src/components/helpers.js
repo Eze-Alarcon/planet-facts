@@ -1,6 +1,6 @@
 
 
-const findTags = (select, planet) => {
+const findTags = (selected, planet) => {
     let tags = []
     let viewport = window.innerWidth < 768;
 
@@ -13,13 +13,13 @@ const findTags = (select, planet) => {
     for (let tag of tags) tag.dataset.color = false
 
     console.log("findTags activated:", {
-        "select": select,
+        "select": selected,
         "planet": planet,
         "tags": tags
     })
 
-    if (select !== undefined) {
-        select.dataset.color = planet.toLowerCase()
+    if (selected !== undefined) {
+        selected.dataset.color = planet.toLowerCase()
     }
     else if (planet !== undefined) {
         tags[0].dataset.color = planet.toLowerCase()
@@ -27,13 +27,13 @@ const findTags = (select, planet) => {
 }
 
 
-const findButtons = (select, planet) => {
+const findButtons = (selected, planet) => {
     let [...tags] = document.querySelectorAll(".navigation > button")
 
     for (let tag of tags) tag.dataset.color = false
 
-    if (select !== undefined) {
-        select.dataset.color = planet.toLowerCase()
+    if (selected !== undefined) {
+        selected.dataset.color = planet.toLowerCase()
     }
     else if (planet !== undefined) {
         tags[0].dataset.color = planet.toLowerCase()
