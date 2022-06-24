@@ -14,7 +14,7 @@
     --white: #FFFFFF;
     --dark-gray: hsla(240, 17%, 26%, 1);
     --light-gray: hsla(240, 6%, 54%, 1);
-    --border-color: hsla(0, 0%, 100%, .2);
+    --border-color: hsla(0, 0%, 100%, .05);
 
     --mercury: hsla(194, 48%, 49%, 1);
     --venus: hsla(33, 82%, 61%, 1);
@@ -77,6 +77,9 @@ span {
     color: var(--white);
     max-width: 60ch;
 }
+
+
+
 
 
 
@@ -172,6 +175,23 @@ span {
 
 
 
+
+@media (min-width: 1440px) {
+    .header {
+        grid-template-areas: "headerLeft headerRight";
+    }
+
+    .header--top {
+        grid-area: headerLeft;
+        justify-content: start;
+    }
+
+    .header--nav {
+        grid-area: headerRight;
+        padding-right: 4rem;
+        gap: 3.3rem;
+    }
+}
 
 
 
@@ -815,9 +835,11 @@ img[data-url="neptune"] {
     =========================
 */
 
-.header--nav h3:hover,
-.header--bottom h3:hover {
-    --item-border: var(--light-gray);
+@media (min-width: 768px) {
+    .header--nav h3:hover,
+    .header--bottom h3:hover {
+        --item-border: var(--light-gray);
+    }
 }
 
 .header--nav h3[data-color="mercury"],
@@ -872,10 +894,13 @@ img[data-url="neptune"] {
     ======================
 */
 
-button:hover,
-button:focus {
-    --bg-color: var(--dark-gray);
+@media (min-width: 768px) {
+    button:hover,
+    button:focus {
+        --bg-color: var(--dark-gray);
+    }
 }
+
 
 
 button[data-color="mercury"] {
