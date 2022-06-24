@@ -15,10 +15,20 @@ const Status = ({ children }) => {
 
 
 	const findPlanet = (id) => {
-		let [planet] = allData.filter(planet => planet.name === id) 
-		setPlanetData(() => planet)
-		setInfoAbout(() => "overview")
-		setModal((prevState) => !prevState)
+
+		let viewport = window.innerWidth < 768;
+
+		if (viewport) {
+			let [planet] = allData.filter(planet => planet.name === id) 
+			setPlanetData(() => planet)
+			setInfoAbout(() => "overview")
+			setModal((prevState) => !prevState)
+		} else {
+			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value) 
+			setPlanetData(() => planet)
+			setInfoAbout(() => "overview")
+			findButtons(undefined, id.target.dataset.value)
+		}
 	} 
 
 	useEffect(() => {

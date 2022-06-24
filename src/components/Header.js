@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import Aside from "./Aside"
 import HeaderBottom from './HeaderBottom'
 import { Information } from './Status'
-// import HeaderPlanets from './HeaderPlanets'
+import HeaderPlanets from './HeaderPlanets'
 
 
 const Header = () => {
@@ -36,15 +36,15 @@ const Header = () => {
             <HeaderBottom color={planetData.name}/>
         </nav>
 
-        {/* <nav 
+        <nav 
         className="header--nav"
-        > onClick={(e) => changePlanet(e)}
+        onClick={(e) => findPlanet(e)}> 
             {
                 planet.map(item => {
                     return <HeaderPlanets key={item} name={item}/>
                 })
             }
-        </nav> */}
+        </nav>
 
        
 

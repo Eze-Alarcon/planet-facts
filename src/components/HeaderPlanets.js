@@ -1,13 +1,11 @@
 const HeaderPlanets = ({name}) => {
 
-    let shortcut = name.toLowerCase()
-
     return (
     <h3 
         key={name}
         className="subtitle--big" 
-        data-value={shortcut}
-        data-color={shortcut}>
+        data-value={name}
+        data-color={name.toLowerCase()}>
         {name.toUpperCase()}
     </h3>
     )
