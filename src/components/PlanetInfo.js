@@ -36,7 +36,7 @@ const PlanetInfo = () => {
                 </p>
             </div>
 
-            <nav className="navigation" onClick={(e) => changeContent(e)}>
+            <nav className="navigation" onClick={(e) => changeContent(e, planetData.name)}>
                 <Navigation/>
             </nav>
         </section>

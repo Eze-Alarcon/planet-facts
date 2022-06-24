@@ -453,48 +453,6 @@ button {
 
 
 
-button:hover,
-button:focus {
-    --bg-color: var(--dark-gray);
-}
-
-
-button[data-color="mercury"] {
-    --bg-color: var(--mercury); 
-}
-
-button[data-color="venus"] {
-    --bg-color: var(--venus); 
-}
-
-button[data-color="earth"] {
-    --bg-color: var(--earth); 
-}
-
-button[data-color="mars"] {
-    --bg-color: var(--mars); 
-}
-
-button[data-color="jupiter"] {
-    --bg-color: var(--jupiter); 
-}
-
-button[data-color="saturn"] {
-    --bg-color: var(--saturn); 
-}
-
-button[data-color="uranus"] {
-    --bg-color: var(--uranus); 
-}
-
-button[data-color="neptune"] {
-    --bg-color: var(--neptune); 
-}
-
-
-
-
-
 
 
 
@@ -777,3 +735,50 @@ img[data-url="neptune"] {
 
 
 
+
+
+/* 
+    ======================
+    
+    ----- Nav Colors -----
+
+    ======================
+*/
+
+button:hover,
+button:focus {
+    --bg-color: var(--dark-gray);
+}
+
+
+button[data-color="mercury"] {
+    --bg-color: var(--mercury); 
+}
+
+button[data-color="venus"] {
+    --bg-color: var(--venus); 
+}
+
+button[data-color="earth"] {
+    --bg-color: var(--earth); 
+}
+
+button[data-color="mars"] {
+    --bg-color: var(--mars); 
+}
+
+button[data-color="jupiter"] {
+    --bg-color: var(--jupiter); 
+}
+
+button[data-color="saturn"] {
+    --bg-color: var(--saturn); 
+}
+
+button[data-color="uranus"] {
+    --bg-color: var(--uranus); 
+}
+
+button[data-color="neptune"] {
+    --bg-color: var(--neptune); 
+}

@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import planetsInfo from '../data.json'
-import { findTags } from './helpers'
+import { findTags, findButtons } from './helpers'
 
 export const Information = createContext()
 
@@ -45,11 +45,14 @@ const Status = ({ children }) => {
     const handleModal = () => setModal(prevState => !prevState)
 
 	const changeContent = (e, planet) => {
-		console.log("change content active:", [e, planet])
+		let viewport = window.innerWidth < 768;
 
-		if (e.target.dataset.value) {
+		if (e.target.dataset.value && viewport) {
 			setInfoAbout(() => e.target.dataset.value)
 			findTags(e.target, planet)
+		} else {
+			setInfoAbout(() => e.target.dataset.value)
+			findButtons(e.target, planet)
 		}
 	}
 
