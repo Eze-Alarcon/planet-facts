@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import planetsInfo from '../data.json'
-import { findTags, findButtons } from './helpers'
+import { findTags } from './helpers'
 
 export const Information = createContext()
 
@@ -30,7 +30,7 @@ const Status = ({ children }) => {
 			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
 			setPlanetData(() => planet)
 			setInfoAbout(() => "overview")
-			findButtons(undefined, id.target.dataset.value)
+			findTags(undefined, id.target.dataset.value)
 		}
 	} 
 
@@ -39,7 +39,7 @@ const Status = ({ children }) => {
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
 			setImage(() => planetData.images.planet)
-			findTags(undefined, planetData.name, true)  // Aca esta el tema
+			findTags(undefined, planetData.name)
 		}
 
 		if (infoAbout === "structure") {
@@ -62,10 +62,10 @@ const Status = ({ children }) => {
 
 		if (e.target.dataset.value && viewport) {
 			setInfoAbout(() => e.target.dataset.value)
-			findTags(e.target, planet)
+			findTags(e.target.dataset.value, planet)
 		} else {
 			setInfoAbout(() => e.target.dataset.value)
-			findButtons(e.target, planet)
+			findTags(e.target.dataset.value, planet)
 		}
 	}
 
