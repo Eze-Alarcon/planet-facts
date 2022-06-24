@@ -111,13 +111,6 @@ span {
     cursor: pointer;
 }
 
-.header--top i {
-    height: 1.7rem;
-    cursor: pointer;
-    width: 2.4rem;
-    background: url('../public/resources/icon-hamburger.svg') no-repeat center /cover;
-}
-
 .header--top i.open {
     opacity: .5;
 }
