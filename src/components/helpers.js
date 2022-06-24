@@ -1,7 +1,8 @@
 
 
-const findTags = (selected, planet) => {
+const findTags = (selected, planet, update) => {
     let tags = []
+
     let viewport = window.innerWidth < 768;
 
     if (viewport) {
@@ -12,16 +13,25 @@ const findTags = (selected, planet) => {
 
     for (let tag of tags) tag.dataset.color = false
 
+    if (!viewport && update) {
+        let [tag] = tags.filter(item => item.dataset.value === planet)
+        tag.dataset.color = planet.toLowerCase()
+        console.log(tag)
+    }
+
+    
+
     console.log("findTags activated:", {
         "select": selected,
         "planet": planet,
-        "tags": tags
+        "tags": tags,
+        update,
     })
 
     if (selected !== undefined) {
         selected.dataset.color = planet.toLowerCase()
     }
-    else if (planet !== undefined) {
+    else if (planet !== undefined && viewport) {
         tags[0].dataset.color = planet.toLowerCase()
     }
 }

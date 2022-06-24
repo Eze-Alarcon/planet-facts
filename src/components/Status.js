@@ -16,7 +16,7 @@ const Status = ({ children }) => {
 
 	const findPlanet = (id) => {
 
-		if (id.target.localName === "nav") return
+		if (id.target?.localName === "nav") return
 
 		let viewport = window.innerWidth < 768;
 
@@ -39,7 +39,7 @@ const Status = ({ children }) => {
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
 			setImage(() => planetData.images.planet)
-			findTags(undefined, planetData.name)  // Aca esta el tema
+			findTags(undefined, planetData.name, true)  // Aca esta el tema
 		}
 
 		if (infoAbout === "structure") {
