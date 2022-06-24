@@ -1,9 +1,22 @@
 
 
 const findTags = (select, planet) => {
-    let [...tags] = document.querySelectorAll(".header--bottom > h3")
+    let tags = []
+    let viewport = window.innerWidth < 768;
+
+    if (viewport) {
+        [...tags] = document.querySelectorAll(".header--bottom > h3")
+    } else {
+        [...tags] = document.querySelectorAll(".header--nav > h3")
+    }
 
     for (let tag of tags) tag.dataset.color = false
+
+    console.log("findTags activated:", {
+        "select": select,
+        "planet": planet,
+        "tags": tags
+    })
 
     if (select !== undefined) {
         select.dataset.color = planet.toLowerCase()

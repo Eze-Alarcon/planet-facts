@@ -265,6 +265,11 @@ span {
         place-items: center;
         border-bottom: 1px solid var(--border-color);
     }
+
+    .header--nav h3 {
+        --item-border: var(--black);
+        border-bottom: 4px solid var(--item-border);
+    }
 }
 
 
@@ -696,39 +701,47 @@ img[data-url="neptune"] {
     =========================
 */
 
+.header--nav h3:hover,
 .header--bottom h3:hover {
     --item-border: var(--light-gray);
 }
 
-
+.header--nav h3[data-color="mercury"],
 .header--bottom h3[data-color="mercury"] {
     --item-border: var(--mercury); 
 }
 
+.header--nav h3[data-color="venus"],
 .header--bottom h3[data-color="venus"] {
     --item-border: var(--venus); 
 }
 
+.header--nav h3[data-color="earth"],
 .header--bottom h3[data-color="earth"] {
     --item-border: var(--earth); 
 }
 
+.header--nav h3[data-color="mars"],
 .header--bottom h3[data-color="mars"] {
     --item-border: var(--mars); 
 }
 
+.header--nav h3[data-color="jupiter"],
 .header--bottom h3[data-color="jupiter"] {
     --item-border: var(--jupiter); 
 }
 
+.header--nav h3[data-color="saturn"],
 .header--bottom h3[data-color="saturn"] {
     --item-border: var(--saturn); 
 }
 
+.header--nav h3[data-color="uranus"],
 .header--bottom h3[data-color="uranus"] {
     --item-border: var(--uranus); 
 }
 
+.header--nav h3[data-color="neptune"],
 .header--bottom h3[data-color="neptune"] {
     --item-border: var(--neptune); 
 }
