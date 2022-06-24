@@ -372,7 +372,7 @@ span {
             "image image"
             "description nav";
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 40rem 36rem;
+        grid-template-rows: 46rem 36rem;
         padding: 0 3.9rem;
     }
 
@@ -601,17 +601,17 @@ button {
 
 img[data-url="mercury"] {
     width: 11.1rem;
-    height: 11.1rem
+    height: 11.1rem;
 }
 
 img[data-url="venus"] {
     width: 15.4rem;
-    height: 15.4rem
+    height: 15.4rem;
 }
 
 img[data-url="earth"] {
     width: 17.3rem;
-    height: 17.3rem
+    height: 17.3rem;
 }
 
 img[data-url="mars"] {
@@ -621,22 +621,64 @@ img[data-url="mars"] {
 
 img[data-url="jupiter"] {
     width: 22.4rem;
-    height: 22.4rem
+    height: 22.4rem;
 }
 
 img[data-url="saturn"] {
     width: 25rem;
-    height: 25rem
+    height: 25rem;
 }
 
 img[data-url="uranus"] {
     width: 17.6rem;
-    height: 17.6rem
+    height: 17.6rem;
 }
 
 img[data-url="neptune"] {
     width: 17.3rem;
-    height: 17.3rem
+    height: 17.3rem;
+}
+
+@media (min-width: 768px) {
+    img[data-url="mercury"] {
+        width: 28.5rem;
+        height: 28.5rem;
+    }
+
+    img[data-url="venus"] {
+        width: 21.3rem;
+        height: 21.3rem;
+    }
+
+    img[data-url="earth"] {
+        width: 38.5rem;
+        height: 38.5rem;
+    }
+
+    img[data-url="mars"] {
+        width: 21.3rem;
+        height: 21.3rem;
+    }
+
+    img[data-url="jupiter"] {
+        width: 36.9rem;
+        height: 36.9rem;
+    }
+
+    img[data-url="saturn"] {
+        width: 42.2rem;
+        height: 42.2rem;
+    }
+
+    img[data-url="uranus"] {
+        width: 29rem;
+        height: 29rem;
+    }
+
+    img[data-url="neptune"] {
+        width: 28.5rem;
+        height: 28.5rem;
+    }
 }
 
 
