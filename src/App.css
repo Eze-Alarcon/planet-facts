@@ -147,6 +147,7 @@ span {
 }
 
 .header--bottom h3 {
+    min-width: 50%;
     --item-border: var(--black);
     border-bottom: 4px solid var(--item-border);
 }
@@ -200,6 +201,7 @@ span {
     }
 
     .header--nav h3 {
+        min-width: 100%;
         --item-border: var(--black);
         border-bottom: 4px solid var(--item-border);
     }
@@ -844,7 +846,7 @@ img[data-url="neptune"] {
     =========================
 */
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
     .header--nav h3:hover,
     .header--bottom h3:hover {
         --item-border: var(--light-gray);
@@ -903,7 +905,7 @@ img[data-url="neptune"] {
     =============================
 */
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
     button:hover,
     button:focus {
         --bg-color: var(--dark-gray);

@@ -37,20 +37,13 @@ const findTags = (search, planet) => {
 }
 
 
-/* 
-    Fade entrances
-
-    Fade exits
-
-*/
 
 const imgAnimations = () => {
 
     const NECESARY = "animate__animated"
 
     const animations = {
-        "leftInFade": "animate__fadeInLeft",
-        "rightOutFade": "animate__fadeOutRight",
+        "leftInFade": "animate__fadeInLeft"
     }
 
     let [imgTag] = document.querySelectorAll("img")
@@ -61,7 +54,7 @@ const imgAnimations = () => {
 
     setTimeout(() => {
         imgTag.classList = ``
-    }, 1000)
+    }, 1500)
 }
 
 
@@ -72,7 +65,6 @@ const spanAnimation = () => {
     const NECESARY = "animate__animated"
 
     const animations = {
-        "leftInFade": "animate__fadeInLeft",
         "zoomIn": "animate__zoomIn",
         "delay": "animate__delay-1s"
     }
