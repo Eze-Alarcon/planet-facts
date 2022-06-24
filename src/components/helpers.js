@@ -44,33 +44,40 @@ const findTags = (search, planet) => {
 
 */
 
-const imgAnimations = (mobile) => {
+const imgAnimations = () => {
 
     const NECESARY = "animate__animated"
 
     const animations = {
         "leftInFade": "animate__fadeInLeft",
         "rightOutFade": "animate__fadeOutRight",
-        "flipInX": "animate__flipInX",
-        "flipOutX": "animate__flipOutX"
     }
 
     let [imgTag] = document.querySelectorAll("img")
 
+    
+    imgTag.classList = `${NECESARY} ${animations.leftInFade}`
 
-    if (imgTag.classList !== "" && !mobile) {
-        imgTag.classList = `${NECESARY} ${animations.rightOutFade}`
 
-        setTimeout(() => {
-            imgTag.classList = `${NECESARY} ${animations.leftInFade}`
-        }, 1000)
-    } else {
-        imgTag.classList = `${NECESARY} ${animations.leftInFade}`
+    setTimeout(() => {
+        imgTag.classList = ``
+    }, 1000)
+}
 
-        setTimeout(() => {
-            imgTag.classList = ``
-        }, 1000)
+
+const spanAnimation = () => {
+
+    const SpanClass = "geology--img"
+
+    const NECESARY = "animate__animated"
+
+    const animations = {
+        "leftInFade": "animate__fadeInLeft",
+        "zoomIn": "animate__zoomIn",
+        "delay": "animate__delay-1s"
     }
+
+    return `${SpanClass} ${NECESARY} ${animations.zoomIn} ${animations.delay}`
 
 }
 
@@ -83,4 +90,4 @@ const imgAnimations = (mobile) => {
 
 
 
-export { findTags, imgAnimations }
+export { findTags, imgAnimations, spanAnimation }

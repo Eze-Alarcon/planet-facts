@@ -1,3 +1,5 @@
+import { spanAnimation } from './helpers'
+
 const MainImage = ({props}) => {
 	
 	let { image, planetData } = props
@@ -6,7 +8,6 @@ const MainImage = ({props}) => {
 	let backImage = {
 		backgroundImage: `url(./resources/geology-${shortcut}.png)`,
 	}
-
 
 	if (!image.includes("geology")) {
 		return (
@@ -18,7 +19,11 @@ const MainImage = ({props}) => {
 		return (
 			<div>
 				<img className="" src={`./resources/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
-				<span className="geology--img" style={backImage}></span>
+
+				<span 
+					className={spanAnimation()} 
+					style={backImage}>
+				</span>
 			</div>
 		)
 	}

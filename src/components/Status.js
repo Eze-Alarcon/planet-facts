@@ -19,7 +19,7 @@ const Status = ({ children }) => {
 		if (id.target?.localName === "nav") return
 		let viewport = window.innerWidth < 768;
 
-		imgAnimations(viewport)
+		imgAnimations()
 		
 		if (viewport) {
 			let [planet] = allData.filter(planet => planet.name === id) 
@@ -29,12 +29,10 @@ const Status = ({ children }) => {
 		}
 
 		else {
-			setTimeout(() => {
-				let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
-				setPlanetData(() => planet)
-				setInfoAbout(() => "overview")
-				findTags("overview", id.target.dataset.value)
-			}, 1000)
+			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
+			setPlanetData(() => planet)
+			setInfoAbout(() => "overview")
+			findTags("overview", id.target.dataset.value)
 		}
 
 	} 
@@ -63,10 +61,11 @@ const Status = ({ children }) => {
     const handleModal = () => setModal(prevState => !prevState)
 
 	const changeContent = (e, planet) => {
+		if (e.target.dataset.value === undefined) return
+		
 		let viewport = window.innerWidth < 768;
 
-		if (e.target.dataset.value === undefined) return
-
+		
 		if (e.target.dataset.value && viewport) {
 			setInfoAbout(() => e.target.dataset.value)
 			findTags(e.target.dataset.value, planet)
@@ -74,6 +73,8 @@ const Status = ({ children }) => {
 			setInfoAbout(() => e.target.dataset.value)
 			findTags(e.target.dataset.value, planet)
 		}
+		
+		imgAnimations(e.target.dataset.value)
 	}
 
   return (

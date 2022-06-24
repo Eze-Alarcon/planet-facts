@@ -170,7 +170,7 @@ span {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .header--top {
         justify-content: space-between;
     }
@@ -503,7 +503,7 @@ span {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .navigation {
         display: none !important;
     }
@@ -678,6 +678,7 @@ button {
 
 .geology--img {
     position: absolute;
+    display: block;
     background-size: contain;
     background-repeat: no-repeat;
     height: 12rem;
