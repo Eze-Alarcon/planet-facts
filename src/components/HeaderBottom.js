@@ -1,6 +1,5 @@
 const HeaderBottom = ({color}) => {
 
-
   return (
     <>
         <h3 

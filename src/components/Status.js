@@ -45,6 +45,8 @@ const Status = ({ children }) => {
     const handleModal = () => setModal(prevState => !prevState)
 
 	const changeContent = (e, planet) => {
+		console.log("change content active:", [e, planet])
+
 		if (e.target.dataset.value) {
 			setInfoAbout(() => e.target.dataset.value)
 			findTags(e.target, planet)
