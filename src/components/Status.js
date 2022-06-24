@@ -30,7 +30,7 @@ const Status = ({ children }) => {
 			let [planet] = allData.filter(planet => planet.name === id.target.dataset.value)
 			setPlanetData(() => planet)
 			setInfoAbout(() => "overview")
-			findTags(undefined, id.target.dataset.value)
+			findTags("overview", id.target.dataset.value)
 		}
 	} 
 
@@ -39,7 +39,7 @@ const Status = ({ children }) => {
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
 			setImage(() => planetData.images.planet)
-			findTags(undefined, planetData.name)
+			findTags("overview", planetData.name)
 		}
 
 		if (infoAbout === "structure") {
@@ -59,6 +59,8 @@ const Status = ({ children }) => {
 
 	const changeContent = (e, planet) => {
 		let viewport = window.innerWidth < 768;
+
+		if (e.target.dataset.value === undefined) return
 
 		if (e.target.dataset.value && viewport) {
 			setInfoAbout(() => e.target.dataset.value)

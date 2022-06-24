@@ -16,20 +16,17 @@ const findTags = (search, planet) => {
 
 
     if (search !== undefined) {
-        console.log("search", search)
         
         let [headerType] = headerTypes.filter(item => item.dataset.value === search)
         headerType.dataset.color = planet.toLowerCase()
-        console.log("headerType: ",headerType)
 
         let [button] = buttons.filter(item => item.dataset.value === search)
         button.dataset.color = planet.toLowerCase()
-        console.log("button: ", button)   
     }
 
 
     /* 
-        Si se cambia de planeta o el valor es indefinido se ejecutara esta linea
+        Fallback por si se cambia de planeta o el valor es indefinido se ejecutara esta linea
     */
 
     if (search === undefined) {
