@@ -75,11 +75,4 @@ const spanAnimation = () => {
 
 
 
-
-
-
-
-
-
-
 export { findTags, imgAnimations, spanAnimation }
