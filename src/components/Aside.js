@@ -5,10 +5,17 @@ import { Information } from './Status'
 const Aside = ({name}) => {
     const { findPlanet } = useContext(Information)
 
+    const iconArrow = {
+        "backgroundImage": `url('../assets/icon-chevron.svg')`,
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "backgroundPosition": "center",
+    }
+
 
     return (
     <div className="aside--container" key={name} onClick={() => findPlanet(name)}>
-        <i className="aside--planet" data-planet={name.toLowerCase()}>
+        <i className="aside--planet" style={iconArrow} data-planet={name.toLowerCase()}>
             {/* planet icon */}
         </i>
         <h3 className="aside--name">

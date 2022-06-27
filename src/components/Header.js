@@ -17,6 +17,13 @@ const Header = () => {
 
     const planet = allData.map((planet) => planet.name)
 
+    const iconMenu = {
+        "backgroundImage": `url('../assets/icon-hamburger.svg')`,
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "backgroundPosition": "center",
+    }
+
     return (
     <header className="header">
 
@@ -25,7 +32,7 @@ const Header = () => {
                 THE PLANETS
             </h1>
 
-            <i onClick={handleModal} className={!modal ? "" : "open"}>
+            <i onClick={handleModal} className={!modal ? "" : "open"} style={iconMenu}>
               {/* burger menu container */}  
             </i>
         </div>

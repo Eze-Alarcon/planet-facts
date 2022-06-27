@@ -12,6 +12,13 @@ const PlanetInfo = () => {
         changeContent
     } = useContext(Information)
     
+    const iconLink = {
+        "backgroundImage": `url('../assets/icon-source.svg')`,
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "backgroundPosition": "center",
+    }
+
 
     return (
     <main className={ !modal ? "main" : "vanish"}>
@@ -32,7 +39,7 @@ const PlanetInfo = () => {
                 </p>
 
                 <p className="text">
-                    Source :  <a className="text--link" href={showInfo.source}>wikipedia <i className="link--icon"></i></a> 
+                    Source :  <a className="text--link" href={showInfo.source}>wikipedia <i className="link--icon" style={iconLink}></i></a> 
                 </p>
             </div>
 
