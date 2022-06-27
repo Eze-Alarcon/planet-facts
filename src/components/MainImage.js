@@ -6,7 +6,7 @@ const MainImage = ({props}) => {
 	let shortcut = planetData.name.toLowerCase()
 
 	let backImage = {
-		backgroundImage: `url(./assets/geology-${shortcut}.png)`,
+		backgroundImage: `url(../assets//geology-${shortcut}.png)`,
 	}
 
 	if (!image.includes("geology")) {
@@ -18,7 +18,7 @@ const MainImage = ({props}) => {
 	} else if (image.includes("geology")) {
 		return (
 			<div>
-				<img className="" src={`./assets/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
+				<img className="" src={`../assets/planet-${shortcut}.svg`} alt="Planet" data-url={planetData.name.toLowerCase()}/>
 
 				<span 
 					className={spanAnimation()} 
