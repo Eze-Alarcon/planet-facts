@@ -48,11 +48,11 @@
 */ 
 
 
-/* body {
+body {
     background-color: var(--black);
-    background-image: url('../public/resources/background-stars.svg');
+    background-image: url('./assets/background-stars.svg');
     background-size: contain;
-} */
+}
 
 h1, 
 h2 {
@@ -118,12 +118,12 @@ span {
     cursor: pointer;
 }
 
-/* .header--top i {
+.header--top i {
     height: 1.7rem;
     cursor: pointer;
     width: 2.4rem;
-    background: url('../public/resources/icon-hamburger.svg') no-repeat center /cover;
-} */
+    background: url('./assets/icon-hamburger.svg') no-repeat center /cover;
+}
 
 .header--top i.open {
     opacity: .5;
@@ -282,11 +282,11 @@ span {
     letter-spacing: 1.3px;
 }
 
-/* .aside--container .arrow {
+.aside--container .arrow {
     width: 1.2rem;
     height: 1.2rem;
-    background: url('../public/resources/icon-chevron.svg') no-repeat center /cover;
-} */
+    background: url('./assets/icon-chevron.svg') no-repeat center /cover;
+}
 
 
 
@@ -392,14 +392,14 @@ span {
 }
 
 
-/* .link--icon {
+.link--icon {
     position: absolute;
     right: -20px;
     bottom: 0;
-    background: url('../public/resources/icon-source.svg') no-repeat center /cover;
+    background: url('./assets/icon-source.svg') no-repeat center /cover;
     height: 1.5rem;
     width: 1.5rem
-} */
+}
 
 
 /* 
