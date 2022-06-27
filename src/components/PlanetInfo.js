@@ -13,7 +13,7 @@ const PlanetInfo = () => {
     } = useContext(Information)
     
     const iconLink = {
-        "backgroundImage": `url('../assets/icon-source.svg')`,
+        "backgroundImage": `url('../resources/icon-source.svg')`,
         "backgroundSize": "cover",
         "backgroundRepeat": "no-repeat",
         "backgroundPosition": "center",

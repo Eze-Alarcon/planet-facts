@@ -18,7 +18,7 @@ const Header = () => {
     const planet = allData.map((planet) => planet.name)
 
     const iconMenu = {
-        "backgroundImage": `url('../assets/icon-hamburger.svg')`,
+        "backgroundImage": `url('../resources/icon-hamburger.svg')`,
         "backgroundSize": "cover",
         "backgroundRepeat": "no-repeat",
         "backgroundPosition": "center",
