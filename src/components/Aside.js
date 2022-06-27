@@ -6,7 +6,7 @@ const Aside = ({name}) => {
     const { findPlanet } = useContext(Information)
 
     const iconArrow = {
-        "backgroundImage": `url('../resources/icon-chevron.svg')`,
+        "backgroundImage": `url(../resources/icon-chevron.svg)`,
         "backgroundSize": "cover",
         "backgroundRepeat": "no-repeat",
         "backgroundPosition": "center",
