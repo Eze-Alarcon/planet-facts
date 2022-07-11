@@ -17,7 +17,9 @@ const Status = ({ children }) => {
 
 	const findPlanet = (id) => {
 
-		if (id.target?.localName === "nav") return
+		if (id.target?.localName === "nav" 
+		|| id.target.dataset.value === planetData.name) return
+
 		let viewport = window.innerWidth < 768;
 
 		imgAnimations()
@@ -80,7 +82,8 @@ const Status = ({ children }) => {
 	}
 
 	const changeContent = (e, planet) => {
-		if (e.target.dataset.value === undefined) return
+		if (e.target.dataset.value === undefined 
+			|| e.target.dataset.value === infoAbout) return
 		
 		let viewport = window.innerWidth < 768;
 

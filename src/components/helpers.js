@@ -42,37 +42,21 @@ const imgAnimations = () => {
 
     const NECESARY = "animate__animated"
 
-    const animations = {
-        "leftInFade": "animate__fadeInLeft"
-    }
-
-    let [imgTag] = document.querySelectorAll("img")
-
+    const animations = "animate__fadeInLeft"
     
-    imgTag.classList = `${NECESARY} ${animations.leftInFade}`
+
+    let imgTag = document.querySelector("img")
+
+    imgTag.classList = ""
+
+    imgTag.classList = `${NECESARY} ${animations}`
 
 
     setTimeout(() => {
         imgTag.classList = ``
-    }, 1500)
-}
-
-
-const spanAnimation = () => {
-
-    const SpanClass = "geology--img"
-
-    const NECESARY = "animate__animated"
-
-    const animations = {
-        "zoomIn": "animate__zoomIn",
-        "delay": "animate__delay-1s"
-    }
-
-    return `${SpanClass} ${NECESARY} ${animations.zoomIn} ${animations.delay}`
-
+    }, 1000)
 }
 
 
 
-export { findTags, imgAnimations, spanAnimation }
+export { findTags, imgAnimations }
