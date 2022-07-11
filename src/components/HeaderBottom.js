@@ -8,12 +8,14 @@ const HeaderBottom = ({color}) => {
             data-color={color.toLowerCase()}>
             OVERVIEW
         </h3>
+
         <h3 
             className="subtitle--big"  
             data-value="structure"
             data-color={false}>
             STRUCTURE
         </h3>
+        
         <h3 
             className="subtitle--big"  
             data-value="geology"

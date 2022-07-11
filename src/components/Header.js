@@ -23,13 +23,13 @@ const Header = () => {
         "backgroundRepeat": "no-repeat",
         "backgroundPosition": "center",
     }
-
     
 
     return (
     <header className="header">
 
         <div className="header--top">
+
             <h1 className="header--title">
                 THE PLANETS
             </h1>
@@ -37,17 +37,20 @@ const Header = () => {
             <i onClick={handleModal} className={!modal ? "" : "open"} style={iconMenu}>
               {/* burger menu container */}  
             </i>
+
         </div>
         
+        
         <nav
-        className={ !modal ? "header--bottom" : "vanish"} 
-        onClick={(e) => changeContent(e, planetData.name)}>
-            <HeaderBottom color={planetData.name}/>
+            className={ !modal ? "header--bottom" : "vanish"} 
+            onClick={(e) => changeContent(e, planetData.name)}>
+                <HeaderBottom color={planetData.name}/>
         </nav>
 
+
         <nav 
-        className="header--nav"
-        onClick={(e) => findPlanet(e)}> 
+            className="header--nav"
+            onClick={(e) => findPlanet(e)}> 
             {
                 planet.map(item => {
                     return <HeaderPlanets key={item} name={item}/>

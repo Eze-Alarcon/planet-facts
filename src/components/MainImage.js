@@ -17,12 +17,12 @@ const MainImage = ({props}) => {
 				data-url={shortcut}/> 
 			</div>
 		)
-	} else if (image.includes("geology")) {
-
-		
-
+	} 
+	
+	else if (image.includes("geology")) {
 		return (
 			<div>
+				
 				<img 
 					className="" 
 					src={`../resources/planet-${shortcut}.svg`} 
