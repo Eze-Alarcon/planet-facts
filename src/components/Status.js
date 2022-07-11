@@ -12,6 +12,7 @@ const Status = ({ children }) => {
 	const [ showInfo, setShowInfo ] = useState(planetData.overview)
 	const [ image, setImage ] = useState(planetData.images.planet)
     const [modal, setModal] = useState(false)
+	const [firstTry, setFirstTry] = useState(true)
 
 
 	const findPlanet = (id) => {
@@ -58,7 +59,25 @@ const Status = ({ children }) => {
 	}, [infoAbout, planetData])
 
 
-    const handleModal = () => setModal(prevState => !prevState)
+	function resizeFunction() {
+		if (window.innerWidth > 768) {
+			setModal(() => false) 
+			setFirstTry(() => true)
+			window.removeEventListener('resize', resizeFunction)
+		}
+	}
+
+
+    const handleModal = () => {
+		if (firstTry === true) {
+			setFirstTry(() => false)
+			setModal(prevState => !prevState)
+			window.addEventListener('resize', resizeFunction)
+		} 
+		else {
+			setModal(prevState => !prevState)
+		} 
+	}
 
 	const changeContent = (e, planet) => {
 		if (e.target.dataset.value === undefined) return

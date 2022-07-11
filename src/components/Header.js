@@ -24,6 +24,8 @@ const Header = () => {
         "backgroundPosition": "center",
     }
 
+    
+
     return (
     <header className="header">
 

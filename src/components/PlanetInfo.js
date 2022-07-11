@@ -21,7 +21,7 @@ const PlanetInfo = () => {
 
 
     return (
-    <main className={ !modal ? "main" : "vanish"}>
+    <main className={ !modal ? "main" : "main vanish"}>
         <section className="main--description">
 
             <div className="planet--image">
