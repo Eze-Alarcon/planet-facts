@@ -15,15 +15,19 @@ const Aside = ({name}) => {
 
     return (
     <div className="aside--container" key={name} onClick={() => findPlanet(name)}>
-        <i className="aside--planet" style={iconArrow} data-planet={name.toLowerCase()}>
+
+        <i className="aside--planet" data-planet={name.toLowerCase()}>
             {/* planet icon */}
         </i>
+
         <h3 className="aside--name">
             {name.toUpperCase()}                
         </h3>
-        <i className="arrow">
+
+        <i className="arrow" style={iconArrow}>
             {/* arrow icon */}
         </i>
+        
     </div>
     )
 }

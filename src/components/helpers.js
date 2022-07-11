@@ -1,5 +1,6 @@
 
 // search = overview || structure || surface --> geology
+// cambia el color de los tags y elimina los colores anteriores
 const findTags = (search, planet) => {
     let [...headerTypes] = document.querySelectorAll(".header--bottom > h3")
     let [...headerPlanets] = document.querySelectorAll(".header--nav > h3")
@@ -37,42 +38,26 @@ const findTags = (search, planet) => {
 }
 
 
-
+// agrega la animacion a la imagen del planeta usando animateCSS
 const imgAnimations = () => {
 
     const NECESARY = "animate__animated"
 
-    const animations = {
-        "leftInFade": "animate__fadeInLeft"
-    }
-
-    let [imgTag] = document.querySelectorAll("img")
-
+    const ANIMATION = "animate__fadeInLeft"
     
-    imgTag.classList = `${NECESARY} ${animations.leftInFade}`
+
+    let imgTag = document.querySelector("img")
+
+    imgTag.classList = ""
+
+    imgTag.classList = `${NECESARY} ${ANIMATION}`
 
 
     setTimeout(() => {
         imgTag.classList = ``
-    }, 1500)
-}
-
-
-const spanAnimation = () => {
-
-    const SpanClass = "geology--img"
-
-    const NECESARY = "animate__animated"
-
-    const animations = {
-        "zoomIn": "animate__zoomIn",
-        "delay": "animate__delay-1s"
-    }
-
-    return `${SpanClass} ${NECESARY} ${animations.zoomIn} ${animations.delay}`
-
+    }, 1000)
 }
 
 
 
-export { findTags, imgAnimations, spanAnimation }
+export { findTags, imgAnimations }

@@ -12,11 +12,16 @@ const Status = ({ children }) => {
 	const [ showInfo, setShowInfo ] = useState(planetData.overview)
 	const [ image, setImage ] = useState(planetData.images.planet)
     const [modal, setModal] = useState(false)
+	// firstTry es para ayudar con el manejo de modal
+	const [firstTry, setFirstTry] = useState(true)
 
 
+	// Funcion para cambiar de planeta y cambiar los datos (luego el use efect actualizara la informacion en pantalla)
 	const findPlanet = (id) => {
 
-		if (id.target?.localName === "nav") return
+		if (id.target?.localName === "nav" 
+		|| id.target?.dataset?.value === planetData.name) return
+
 		let viewport = window.innerWidth < 768;
 
 		imgAnimations()
@@ -37,6 +42,8 @@ const Status = ({ children }) => {
 
 	} 
 
+
+	// dependiendo de la informacion seleccionada, se actualizaran los datos en pantalla
 	useEffect(() => {
 
 		if (infoAbout === "overview") {
@@ -58,10 +65,31 @@ const Status = ({ children }) => {
 	}, [infoAbout, planetData])
 
 
-    const handleModal = () => setModal(prevState => !prevState)
+	// Helper: Su funcion es evitar que el modal aparezca si la pantalla es mayor a 768px
+	function resizeFunction() {
+		if (window.innerWidth > 768) {
+			setModal(() => false) 
+			setFirstTry(() => true)
+			window.removeEventListener('resize', resizeFunction)
+		}
+	}
 
+	// Manejador del modal para abrir y cerrar
+    const handleModal = () => {
+		if (firstTry === true) {
+			setFirstTry(() => false)
+			setModal(prevState => !prevState)
+			window.addEventListener('resize', resizeFunction)
+		} 
+		else {
+			setModal(prevState => !prevState)
+		} 
+	}
+
+	// cambiar colores de tags, botones y agregar la animacion del planeta 
 	const changeContent = (e, planet) => {
-		if (e.target.dataset.value === undefined) return
+		if (e.target.dataset.value === undefined 
+			|| e.target.dataset.value === infoAbout) return
 		
 		let viewport = window.innerWidth < 768;
 
