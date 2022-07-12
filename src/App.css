@@ -205,6 +205,8 @@ span {
 @media (min-width: 1440px) {
     .header {
         grid-template-areas: "headerLeft headerRight";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 
     .header--top {
@@ -482,7 +484,7 @@ span {
             "image description"
             "image nav";
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 44rem 30rem;
+        grid-template-rows: 40rem 30rem;
         padding: 0 16.5rem;
     }
 
