@@ -1,16 +1,16 @@
-import { useContext } from 'react'
-import { Information } from './Status'
-import MainImage from './MainImage'
-import Navigation from './Navigation'
+// import { useContext } from 'react'
+// import { Information } from './Status'
+// import MainImage from './MainImage'
+// import Navigation from './Navigation'
 
-const PlanetInfo = () => {
-    const { 
-        showInfo, 
-        planetData, 
-        modal, 
-        image,
-        changeContent
-    } = useContext(Information)
+const PlanetInfo = (props) => {
+    // const { 
+    //     showInfo, 
+    //     planetData, 
+    //     modal, 
+    //     image,
+    //     changeContent
+    // } = useContext(Information)
     
     const iconLink = {
         "backgroundImage": `url(../resources/icon-source.svg)`,
@@ -21,30 +21,36 @@ const PlanetInfo = () => {
 
 
     return (
-    <main className={ !modal ? "main" : "main vanish"}>
+    <main className={ !props.modal ? "main" : "main vanish"}>
         <section className="main--description">
 
             <div className="planet--image">
-                <MainImage props={{image, planetData}}/>
+                {/* <MainImage props={{image, planetData}}/> */}
+                {props.loadImage()}
             </div>
 
             <div className="info--container">
 
                 <h1 className="main--title">
-                    {planetData.name.toUpperCase()}
+                    {props.name.toUpperCase()}
                 </h1>
 
                 <p className="text">
-                    {showInfo.content}
+                    {props.content}
                 </p>
 
                 <p className="text">
-                    Source :  <a className="text--link" href={showInfo.source}>wikipedia <i className="link--icon" style={iconLink}></i></a> 
+                    Source :  <a className="text--link" href={props.source}>wikipedia <i className="link--icon" style={iconLink}></i></a> 
                 </p>
             </div>
 
-            <nav className="navigation" onClick={(e) => changeContent(e, planetData.name)}>
-                <Navigation/>
+            <nav 
+                className="navigation" 
+                onClick={(e) => 
+                    props.changeContent(e, props.name)
+                }>
+                    {/* <Navigation/> */}
+                    {props.loadNavigation()}
             </nav>
         </section>
 
@@ -59,7 +65,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    {planetData.rotation}
+                    {props.rotation}
                 </p>
 
             </div>
@@ -70,7 +76,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    {planetData.revolution}
+                    {props.revolution}
                 </p>
 
             </div>
@@ -81,7 +87,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    {planetData.radius}
+                    {props.radius}
                 </p>
 
             </div>
@@ -92,7 +98,7 @@ const PlanetInfo = () => {
                 </h4>
 
                 <p className="data--value">
-                    {planetData.temperature}
+                    {props.temperature}
                 </p>
 
             </div>

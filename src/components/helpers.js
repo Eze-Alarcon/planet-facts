@@ -26,9 +26,7 @@ const findTags = (search, planet) => {
     }
 
 
-    /* 
-        Fallback por si se cambia de planeta o el valor es indefinido se ejecutara esta linea
-    */
+    // Fallback por si se cambia de planeta o el valor es indefinido se ejecutara esta linea
 
     if (search === undefined) {
         headerTypes[0].dataset.color = planet.toLowerCase()

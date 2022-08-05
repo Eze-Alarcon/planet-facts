@@ -1,5 +1,5 @@
 
-const MainImage = ({props}) => {
+const MainImage = (props) => {
 
 	let { image, planetData } = props
 	let shortcut = planetData.name.toLowerCase()

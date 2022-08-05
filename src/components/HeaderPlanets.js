@@ -2,7 +2,7 @@ const HeaderPlanets = ({name}) => {
 
     return (
     <h3 
-        key={name}
+        // key={name}
         className="subtitle--big" 
         data-value={name}
         data-color={name.toLowerCase()}>
