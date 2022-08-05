@@ -1,14 +1,8 @@
 import './App.css';
 import 'animate.css';
 
-/* components */
-
-// import Status from './components/Status';
-// import { useContext } from 'react'
-// import { Information } from './Status'
-
+// Custom Hook
 import { useStatus } from './components/customHooks/useStatus';
-
 
 // Header
 import Header from './components/Header';
@@ -26,10 +20,7 @@ import Navigation from './components/Navigation'
 
 function App() {
 
-	const { 
-        states,
-		statesUpdaters
-    } = useStatus()
+	const { states, statesUpdaters } = useStatus()
 
 	const {
         allData,
@@ -54,33 +45,24 @@ function App() {
 			<Header
 				allData={allData}
 				name={planetData.name}
-				content={showInfo.content}
-				source={showInfo.source}
 				modal={modal}
+				planet={planet}
 				changeContent={changeContent}
 				findPlanet={findPlanet}
 				handleModal={handleModal}
 				loadHeaderBottom={() => <HeaderBottom
 					color={planetData.name}/>}
-				// loadHeaderPlanets={<HeaderPlanets/>}
 				
+				render1={item => 
+					<HeaderPlanets key={item} name={item}/>
+				}
 
-				render1={() => {
-					planet.map(item => 
-						<HeaderPlanets 
-							key={item} 
-							name={item}/>
-					)
-				}}
-
-				render2={() => {
-					planet.map((item) =>
-						<Aside 
-							key={item} 
-							name={item} 
-							findPlanet={findPlanet}/>
-					)
-				}}
+				render2={item => 
+					<Aside 
+						key={item} 
+						name={item} 
+						findPlanet={findPlanet}/>
+				}
 				
 				
 			/>
@@ -95,13 +77,11 @@ function App() {
 				temperature={planetData.temperature}
 				modal={modal}
 				changeContent={changeContent}
-				loadImage={(
-				) => (
+				loadImage={() => (
 					<MainImage
 						image={image}
 						planetData={planetData}
 					/>
-				
 				)}
 				loadNavigation={() => <Navigation/>}
 			/>

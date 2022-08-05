@@ -1,9 +1,4 @@
-import React from 'react'
-import { useContext } from 'react'
-import { Information } from './Status'
-
-const Aside = ({name}) => {
-    const { findPlanet } = useContext(Information)
+const Aside = ({name, findPlanet}) => {
 
     const iconArrow = {
         "backgroundImage": `url(../resources/icon-chevron.svg)`,

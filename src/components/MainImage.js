@@ -4,9 +4,7 @@ const MainImage = (props) => {
 	let { image, planetData } = props
 	let shortcut = planetData.name.toLowerCase()
 
-	let backImage = {
-		backgroundImage: `url(../resources/geology-${shortcut}.png)`,
-	}
+	let backImage = { backgroundImage: `url(../resources/geology-${shortcut}.png)` }
 
 	if (!image.includes("geology")) {
 		return (
