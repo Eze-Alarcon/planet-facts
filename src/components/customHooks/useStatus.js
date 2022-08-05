@@ -42,31 +42,24 @@ const useStatus = () => {
 	} 
 
 
-    // let showInfo = null
 	// dependiendo de la informacion seleccionada, se actualizaran los datos en pantalla
 	useEffect(() => {
 
-
 		if (infoAbout === "overview") {
 			setShowInfo(() => planetData.overview)
-            // showInfo = infoAbout.overview
 			setImage(() => planetData.images.planet)
 			findTags("overview", planetData.name)
 		}
 
 		if (infoAbout === "structure") {
 			setShowInfo(() => planetData.structure)
-            // showInfo = infoAbout.structure
 			setImage(() => planetData.images.internal)
 		}
 
 		if (infoAbout === "geology") {
 			setShowInfo(() => planetData.geology)
-            // showInfo = infoAbout.geology
 			setImage(() => planetData.images.geology)
 		}
-
-        // return showInfo
 
 	}, [infoAbout, planetData])
 
